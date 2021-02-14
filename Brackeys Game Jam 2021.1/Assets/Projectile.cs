@@ -6,6 +6,8 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] float speed;
     [SerializeField] float lifeTime;
+    [SerializeField] int damage;
+
     [SerializeField] float rayDistance;
     [SerializeField] LayerMask whatIsSolid;
 
@@ -16,7 +18,15 @@ public class Projectile : MonoBehaviour
 
     void Update()
     {
-        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, transform.up, rayDistance )
+        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, transform.up, rayDistance, whatIsSolid);
+        if(hitInfo.collider != null)
+        {
+            if(hitInfo.collider.CompareTag("Enemy"))
+            {
+                hitInfo.collider.GetComponent<IDamageable>().TakeDamage(damage);
+            }
+            DestroyProjectile();
+        }
 
         transform.position += transform.right * speed * Time.deltaTime;
     }

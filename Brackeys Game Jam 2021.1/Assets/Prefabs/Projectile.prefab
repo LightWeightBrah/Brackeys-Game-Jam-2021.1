@@ -128,3 +128,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   lifeTime: 1
+  damage: 25
+  rayDistance: 0
+  whatIsSolid:
+    serializedVersion: 2
+    m_Bits: 192
