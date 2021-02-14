@@ -19,9 +19,12 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody2D rb;
 
+    private FMOD.Studio.EventInstance jumpSound;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        jumpSound = FMODUnity.RuntimeManager.CreateInstance("event:/Player/player_jump");
     }
 
     void Update()
@@ -35,6 +38,8 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = Vector2.up * jumpForce;
             jumpCounter--;
+            jumpSound.start();
+            //jumpSound.release();
         }
 
         moveInput = Input.GetAxis("Horizontal");

@@ -519,7 +519,7 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 0
   HasPlatforms: 0
-  sourceProjectPath: 
+  sourceProjectPath: ../../Brackeys_2021_fmod/Brackeys_2021_fmod.fspro
   sourceBankPath: Assets/fmod_banks/Desktop
   SourceBankPathUnformatted: 
   AutomaticEventLoading: 1
