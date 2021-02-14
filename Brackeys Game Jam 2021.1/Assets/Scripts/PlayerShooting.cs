@@ -10,8 +10,12 @@ public class PlayerShooting : MonoBehaviour
     public Transform firePoint;
     public GameObject projectile;
 
+    public bool isPaused;
+
     void Update()
     {
+        if (isPaused) return;
+
         if(shotsCounter > 0)
         {
             shotsCounter -= Time.deltaTime;

@@ -14,6 +14,8 @@ public class CharacterSwitch : MonoBehaviour
     [SerializeField] GeneralManager generalManager;
     CharacterStats charStats;
 
+    public bool isPaused;
+
     void Start()
     {
         SelectPlayer();
@@ -21,6 +23,8 @@ public class CharacterSwitch : MonoBehaviour
 
     void Update()
     {
+        if (isPaused) return;
+
         int previousSelectedPlayer = selectedPlayer;
 
         if(Input.GetKeyDown(KeyCode.Tab))

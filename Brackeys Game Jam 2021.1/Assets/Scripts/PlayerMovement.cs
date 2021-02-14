@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float groundCheckRadius;
     bool isGrounded;
 
+    public bool isPaused;
+
     Rigidbody2D rb;
 
     private FMOD.Studio.EventInstance jumpSound;
@@ -29,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (isPaused) return;
+
         if(isGrounded)
         {
             jumpCounter = extraJumps;
@@ -56,6 +60,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (isPaused) return;
+
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
 
         rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
