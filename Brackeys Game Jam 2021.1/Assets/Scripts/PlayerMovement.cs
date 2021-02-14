@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] float speed;
-    [SerializeField] float jumpForce;
+    public float speed;
+    public float jumpForce;
     float moveInput;
     bool facingRight = true;
 
-    [SerializeField] int extraJumps;
+    public int extraJumps;
     int jumpCounter;
 
     [SerializeField] LayerMask whatIsGround;

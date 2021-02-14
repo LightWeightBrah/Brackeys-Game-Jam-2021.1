@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour
 {
-    [SerializeField] float timeBtwShots;
+    public float timeBtwShots;
     float shotsCounter;
 
-    [SerializeField] Transform firePoint;
-    [SerializeField] GameObject projectile;
+    public Transform firePoint;
+    public GameObject projectile;
 
     void Update()
     {
