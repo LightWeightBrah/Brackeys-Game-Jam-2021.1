@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void SetMasterVolume(float volume)
     {
-        
+        Debug.Log("Setting Master volume to " + volume);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetSFXVolume(float volume)
     {
-        
+        Debug.Log("Setting SFX volume to " + volume);
+    }
+
+    public void SetMusicVolume(float volume)
+    {
+        Debug.Log("Setting Music volume to " + volume);
     }
 }
