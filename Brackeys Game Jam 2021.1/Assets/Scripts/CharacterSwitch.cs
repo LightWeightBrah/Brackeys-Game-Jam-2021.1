@@ -15,6 +15,7 @@ public class CharacterSwitch : MonoBehaviour
     CharacterStats charStats;
 
     public bool isPaused;
+    public bool isTalking;
 
     FMOD.Studio.PARAMETER_DESCRIPTION pd;
     FMOD.Studio.PARAMETER_ID pID;
@@ -81,5 +82,20 @@ public class CharacterSwitch : MonoBehaviour
         playerShooting.projectile = charStats.projectile;
 
         generalManager.SwitchPlayerIcon(charStats.characterIcon);
+    }
+
+    public void SetIsPaused()
+    {
+        isPaused = true;
+        playerMovement.isPaused = true;
+        playerShooting.isPaused = true;
+        playerMovement.rb.velocity = Vector2.zero;
+    }
+
+    public void UNSetIsPaused()
+    {
+        isPaused = false;
+        playerMovement.isPaused = false;
+        playerShooting.isPaused = false;
     }
 }

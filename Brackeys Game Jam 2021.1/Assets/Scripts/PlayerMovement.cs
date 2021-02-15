@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool isPaused;
 
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
 
     private FMOD.Studio.EventInstance jumpSound;
 

@@ -14,7 +14,7 @@ public class LeftRightEnemy : Enemy
     {
         transform.position += transform.right * speed * Time.deltaTime;
 
-        RaycastHit2D ground = Physics2D.Raycast(groundCheck.position, Vector2.down, 2f);
+        RaycastHit2D ground = Physics2D.Raycast(groundCheck.position, Vector2.down, 1f);
         if(ground.collider == false)
         {
             if(isMovingRight)
