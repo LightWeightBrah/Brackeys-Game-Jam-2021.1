@@ -1,14 +1,12 @@
 [LOG] System::create                           : Header version = 2.01.07. Current version = 2.01.07.
-[LOG] Manager::init                            : maxchannels = 256 studioflags = 00000006 flags 00000000 extradriverdata 0000000000000000.
+[LOG] Manager::init                            : maxchannels = 256 studioflags = 00000006 flags 00000000 extradriverdata 0x0.
 [LOG] SystemI::init                            : Initialize version=20107 (113487), maxchannels=256, flags=0x00020000
-[LOG] SystemI::setOutputInternal               : Setting output to 'FMOD WASAPI Output'
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0x3, nChannels=1, nSamplesPerSec=48000, nAvgBytesPerSec=192000, nBlockAlign=4, wBitsPerSample=32, cbSize=0.
-[LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
-[LOG] DownMix::init                            : dspbuffersize: 1024  rate: 48000. output speaker mode: 2, input speaker mode 3
-[LOG] DownMix::init                            : done.
+[LOG] SystemI::setOutputInternal               : Setting output to 'FMOD Core Audio Output'
+[LOG] OutputCoreAudio::init                    : Output running 2 channels at 48000Hz sample rate.
+[LOG] OutputCoreAudio::init                    : Maximum hardware read size: 1024 samples, Software buffer size: 512 samples, Number of software buffers: 4.
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
-[LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 00000198C8A47CF8 isAsync 0 updatePeriod 0.02
+[LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
+[LOG] AsyncManager::init                       : manager 0x7feda1473808 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -16,42 +14,332 @@
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] SystemI::mixerSuspend                    : Suspending output.
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SystemI::mixerSuspend                    : Suspending output.
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_19.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_19.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_20.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_20.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_21.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_21.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_22.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_22.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_23.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_23.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_24.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_24.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_25.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_25.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_26.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_26.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_27.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_27.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_28.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_28.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_29.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_29.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_30.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_30.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_31.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_31.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_32.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_32.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_33.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_33.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_34.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_34.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_35.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_35.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_36.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_36.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_37.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_37.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_38.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_38.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_39.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_39.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_40.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_40.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_41.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_41.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_42.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_42.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_43.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_43.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_44.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_44.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] SystemI::mixerResume                     : Resuming output.
+[LOG] SystemI::mixerSuspend                    : Suspending output.
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_45.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_45.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_46.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_46.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_47.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_47.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_48.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_48.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_49.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_49.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_50.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_50.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_51.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_51.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_52.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_52.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_53.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_53.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_54.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_54.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_55.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_55.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_56.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_56.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_57.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_57.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] SystemI::mixerResume                     : Resuming output.
 [LOG] SystemI::mixerSuspend                    : Suspending output.
 [LOG] SystemI::mixerResume                     : Resuming output.
 [LOG] SystemI::mixerSuspend                    : Suspending output.
 [LOG] SystemI::mixerResume                     : Resuming output.
 [LOG] SystemI::mixerSuspend                    : Suspending output.
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_58.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_58.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_59.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_59.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_60.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_60.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_61.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_61.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_62.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_62.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_63.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_63.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_64.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_64.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_65.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_65.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_66.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_66.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_67.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_67.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_68.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_68.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_69.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_69.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] SystemI::mixerResume                     : Resuming output.
-[LOG] SoundI::release                          :  (000001989A9160F8)
-[LOG] SoundI::release                          :     player_jump_01 (000001989B3504E8)
-[LOG] SoundI::release                          :  (000001989A918658)
-[LOG] SoundI::release                          :     player_jump_02 (000001989B354C68)
-[LOG] SoundI::release                          :  (000001989A916B08)
-[LOG] SoundI::release                          :     player_jump_03 (000001989B351A08)
-[LOG] SoundI::release                          :  (000001989A915F88)
-[LOG] SoundI::release                          :     player_jump_04 (000001989B3542A8)
+[LOG] SystemI::mixerSuspend                    : Suspending output.
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_70.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_70.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_71.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_71.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_72.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_72.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_73.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_73.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_74.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_74.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_75.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_75.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_76.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_76.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] SystemI::mixerResume                     : Resuming output.
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_77.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_77.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] SystemI::mixerSuspend                    : Suspending output.
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_78.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_78.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_79.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_79.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_80.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_80.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_81.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_81.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_82.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_82.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_83.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_83.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_84.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_84.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_85.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_85.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_86.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_86.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] SystemI::mixerResume                     : Resuming output.
+[LOG] SystemI::mixerSuspend                    : Suspending output.
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_87.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_87.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_88.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_88.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_89.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_89.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_90.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_90.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_91.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_91.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_92.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_92.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_93.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_93.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_94.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_94.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_95.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_95.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_96.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_96.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_97.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_97.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_98.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_98.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_99.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_99.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_100.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_100.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_101.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_101.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_102.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_102.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_103.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_103.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_104.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_104.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_105.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_105.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_106.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_106.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_107.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_107.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_108.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_108.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_109.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_109.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_110.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_110.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_111.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_111.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_112.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_112.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote//Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_113.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file '/Users/eclaverie/Library/Application Support/FMOD Studio/UnsavedProjects/Hotswap-EsEdKw/hotswap_113.bank'
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] SystemI::mixerResume                     : Resuming output.
+[LOG] SoundI::release                          :  (0x7fed8df85ad8)
+[LOG] SoundI::release                          :     player_jump_01 (0x7fedaa480868)
+[LOG] SoundI::release                          :  (0x7fed8ee1acc8)
+[LOG] SoundI::release                          :     player_jump_02 (0x7fed8ee1b5b8)
+[LOG] SoundI::release                          :  (0x7fed8df885e8)
+[LOG] SoundI::release                          :     player_jump_03 (0x7fed8df542c8)
+[LOG] SoundI::release                          :  (0x7fed8ecedee8)
+[LOG] SoundI::release                          :     player_jump_04 (0x7fed8ec0c798)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] ProfileClient::markForDead               : Closing client connection
+[LOG] ProfileClient::recvThreadLoopFunction    : Socket disconnected
+[LOG] Thread::callback                         : FMOD profiler thread (recv) finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD profiler thread (send) finished.
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 
 [LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
-[LOG] SystemI::close                           : Closed.
-[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
-[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
-[LOG] LiveUpdate::release                      : 
-[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
-[LOG] Thread::callback                         : FMOD stream thread finished.
-[LOG] Thread::callback                         : FMOD mixer thread finished.
 [LOG] SystemI::close                           : Closed.

@@ -16,9 +16,15 @@ public class CharacterSwitch : MonoBehaviour
 
     public bool isPaused;
 
+    FMOD.Studio.PARAMETER_DESCRIPTION pd;
+    FMOD.Studio.PARAMETER_ID pID;
+
     void Start()
     {
         SelectPlayer();
+        FMODUnity.RuntimeManager.StudioSystem.getParameterDescriptionByName("SelectedPlayer", out pd);
+        pID = pd.id;
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByID(pID, selectedPlayer);
     }
 
     void Update()
@@ -33,6 +39,7 @@ public class CharacterSwitch : MonoBehaviour
                 selectedPlayer = 0;
             else
                 selectedPlayer++;
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByID(pID, selectedPlayer);
         }
 
         if(previousSelectedPlayer != selectedPlayer)
