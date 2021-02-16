@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour, IDamageable
 {
+    protected GameObject player;
+
     public int health;
+
+    protected void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
 
     public void TakeDamage(int damage)
     {
