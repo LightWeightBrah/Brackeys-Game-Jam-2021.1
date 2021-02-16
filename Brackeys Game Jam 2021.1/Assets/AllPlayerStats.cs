@@ -17,6 +17,8 @@ public class AllPlayerStats : MonoBehaviour, IDamageable
         }
         else
         {
+            Debug.Log("Player takes damage");
+
             health -= damage;
             takeDamageCounter = timeBetweenTakingDamage;
         }
