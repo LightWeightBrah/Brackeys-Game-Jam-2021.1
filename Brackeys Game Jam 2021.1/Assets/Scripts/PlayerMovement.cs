@@ -73,11 +73,11 @@ public class PlayerMovement : MonoBehaviour
 
         if(facingRight)
         {
-            transform.eulerAngles = new Vector3(transform.eulerAngles.x, 0f, transform.eulerAngles.z);
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x, 0f, 0f);
         }
         else
         {
-            transform.eulerAngles = new Vector3(transform.eulerAngles.x, 180f, transform.eulerAngles.z);
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x, 180f, 0f);
         }
     }
 }
