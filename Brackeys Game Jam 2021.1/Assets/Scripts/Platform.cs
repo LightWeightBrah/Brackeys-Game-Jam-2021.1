@@ -6,6 +6,7 @@ public class Platform : MonoBehaviour
 {
     PlatformEffector2D effector;
     bool isPlaying;
+    public float time;
     void Start()
     {
         effector = GetComponentInParent<PlatformEffector2D>();
@@ -15,7 +16,7 @@ public class Platform : MonoBehaviour
     {
         isPlaying = true;
         effector.rotationalOffset = 180f;
-        yield return new WaitForSeconds(0.15f);
+        yield return new WaitForSeconds(time);
         effector.rotationalOffset = 0f;
         isPlaying = false;
     }
