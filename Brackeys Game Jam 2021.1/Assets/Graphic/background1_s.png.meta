@@ -1109,6 +1109,7 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -1140,9 +1141,12 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
@@ -1213,11 +1217,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 442
-        y: 323
-        width: 178
-        height: 880
+        y: 327
+        width: 120
+        height: 834
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1233,12 +1237,12 @@ TextureImporter:
       name: background1_s_5
       rect:
         serializedVersion: 2
-        x: 684
-        y: 340
-        width: 316
-        height: 814
+        x: 701
+        y: 349
+        width: 267
+        height: 803
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1259,7 +1263,7 @@ TextureImporter:
         width: 727
         height: 827
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1275,13 +1279,13 @@ TextureImporter:
       name: background1_s_8
       rect:
         serializedVersion: 2
-        x: 59
-        y: 327
-        width: 336
-        height: 434
+        x: 81
+        y: 337
+        width: 276
+        height: 395
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 1, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
