@@ -18,12 +18,22 @@ public class GeneralManager : MonoBehaviour
 
     bool canUseEscape = true;
 
+    FMOD.Studio.PARAMETER_DESCRIPTION pd;
+    FMOD.Studio.PARAMETER_ID pID;
+
+    private void Start()
+    {
+        FMODUnity.RuntimeManager.StudioSystem.getParameterDescriptionByName("pauseMenu", out pd);
+        pID = pd.id;
+    }
+
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             if(canUseEscape)
                 Pause();
+
         }
     }
 
@@ -34,10 +44,12 @@ public class GeneralManager : MonoBehaviour
         if(isPaused)
         {
             StartCoroutine(StartPause());
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByID(pID, 1f);
         }
         else
         {
             StartCoroutine(StartUNPause());
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByID(pID, 0f);
         }
     }
 
