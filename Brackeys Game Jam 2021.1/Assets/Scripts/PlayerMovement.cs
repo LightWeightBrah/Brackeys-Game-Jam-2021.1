@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
         charSwitch = GetComponent<CharacterSwitch>();
         rb = GetComponent<Rigidbody2D>();
         jumpSound = FMODUnity.RuntimeManager.CreateInstance("event:/Player/player_jump");
-        jumpAnimCounter = 0.5f;
+        jumpAnimCounter = 0.1f;
     }
 
     void Update()
@@ -89,12 +89,12 @@ public class PlayerMovement : MonoBehaviour
 
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
 
-        if(!isGrounded)
+        if(isGrounded)
         {
             if(jumpAnimCounter < 0f)
             {
                 isJumping = false;
-                jumpAnimCounter = 0.5f;
+                jumpAnimCounter = 0.1f;
             }
             else
             {
