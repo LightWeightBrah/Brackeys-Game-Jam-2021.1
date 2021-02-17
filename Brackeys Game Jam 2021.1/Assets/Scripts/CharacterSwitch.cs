@@ -41,12 +41,13 @@ public class CharacterSwitch : MonoBehaviour
             else
                 selectedPlayer++;
             FMODUnity.RuntimeManager.StudioSystem.setParameterByID(pID, selectedPlayer);
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Player/char_change", transform.position);
+            
         }
 
         if(previousSelectedPlayer != selectedPlayer)
         {
             SelectPlayer();
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Player/char_change", transform.position);
         }
     }
 
