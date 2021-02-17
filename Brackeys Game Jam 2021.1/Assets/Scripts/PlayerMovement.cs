@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody2D rb;
 
+    CharacterSwitch charSwitch;
+
     private FMOD.Studio.EventInstance jumpSound;
 
     void Start()
@@ -44,9 +46,16 @@ public class PlayerMovement : MonoBehaviour
             jumpCounter--;
             jumpSound.start();
             //jumpSound.release();
+
+            //charSwitch.ChangeAnimationState(charSwitch.jumpAnim);
         }
 
         moveInput = Input.GetAxis("Horizontal");
+
+        if(moveInput != 0)
+        {
+            charSwitch.ChangeAnimationState(charSwitch.runAnim);
+        }
 
         if(facingRight == false && moveInput > 0)
         {

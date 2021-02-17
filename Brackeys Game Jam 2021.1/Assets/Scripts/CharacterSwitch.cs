@@ -14,11 +14,20 @@ public class CharacterSwitch : MonoBehaviour
     [SerializeField] GeneralManager generalManager;
     CharacterStats charStats;
 
+    public Animator animator;
+    string currentAnimationState;
+
+    public string idleAnim;
+    public string runAnim;
+    public string jumpAnim;
+    public string shootAnim;
+
     public bool isPaused;
     public bool isTalking;
 
     FMOD.Studio.PARAMETER_DESCRIPTION pd;
     FMOD.Studio.PARAMETER_ID pID;
+
 
     void Start()
     {
@@ -75,6 +84,12 @@ public class CharacterSwitch : MonoBehaviour
 
     void SwitchStats()
     {
+        animator = charStats.animator;
+        idleAnim = charStats.idleAnim;
+        runAnim = charStats.runAnim;
+        jumpAnim = charStats.jumpAnim;
+        shootAnim = charStats.shootAnim;
+
         playerMovement.speed = charStats.speed;
         playerMovement.jumpForce = charStats.jumpForce;
         playerMovement.extraJumps = charStats.extraJumps;
@@ -84,6 +99,15 @@ public class CharacterSwitch : MonoBehaviour
         playerShooting.projectile = charStats.projectile;
 
         generalManager.SwitchPlayerIcon(charStats.characterIcon);
+    }
+
+    public void ChangeAnimationState(string newState)
+    {
+        if (currentAnimationState == newState) return;
+
+        animator.Play(newState);
+
+        currentAnimationState = newState;
     }
 
     public void SetIsPaused()
