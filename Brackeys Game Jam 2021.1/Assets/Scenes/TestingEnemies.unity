@@ -1511,11 +1511,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a087ec4b830751d4280fbd350eb4666c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  idleAnim: 
-  runAnim: 
-  jumpAnim: 
-  shootAnim: 
+  animator: {fileID: 900026011}
+  idleAnim: BrushGuy_Idle
+  runAnim: BrushGuy_Run
+  jumpAnim: BrushGuy_Jump
+  shootAnim: BrushGuy_Shoot
   speed: 20
   jumpForce: 25
   extraJumps: 2
@@ -4063,11 +4063,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a087ec4b830751d4280fbd350eb4666c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  idleAnim: 
-  runAnim: 
-  jumpAnim: 
-  shootAnim: 
+  animator: {fileID: 900026011}
+  idleAnim: BrushGuy_Idle
+  runAnim: BrushGuy_Run
+  jumpAnim: BrushGuy_Jump
+  shootAnim: BrushGuy_Shoot
   speed: 6
   jumpForce: 10
   extraJumps: 2
