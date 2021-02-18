@@ -659,6 +659,7 @@ MonoBehaviour:
   groundCheckRadius: 0.5
   isPaused: 0
   rb: {fileID: 0}
+  walkMode: 0
 --- !u!114 &203527854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -734,10 +735,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5de63a371c4657b42877dfb28a07e909, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBtwShots: 0.15
+  timeBtwShots: 0
   firePoint: {fileID: 1406086159}
   projectile: {fileID: 459643772440676934, guid: 0ee9fcc274b8860469458475346c332d, type: 3}
   isPaused: 0
+  shootingAnimationTime: 0.35
 --- !u!61 &203527858
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1133,7 +1135,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &306823614
@@ -5361,7 +5363,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1406086158
@@ -5697,7 +5699,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1509341437
@@ -6742,7 +6744,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1948489639

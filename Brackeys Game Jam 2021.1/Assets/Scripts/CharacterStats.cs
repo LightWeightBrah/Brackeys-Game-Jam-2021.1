@@ -26,23 +26,17 @@ public class CharacterStats : MonoBehaviour
     public Sprite characterIcon;
 
     PlayerShooting shooting;
+    PlayerMovement playerMovement;
 
     private void Awake()
     {
+        playerMovement = GetComponentInParent<PlayerMovement>();
         shooting = GetComponentInParent<PlayerShooting>();
     }
 
     public void Shoot()
     {
-        shooting.Shoot();
+       // shooting.Shoot();
     }
 
-    public void StopShooting()
-    {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            return;
-        }
-        shooting.isShooting = false;
-    }
 }

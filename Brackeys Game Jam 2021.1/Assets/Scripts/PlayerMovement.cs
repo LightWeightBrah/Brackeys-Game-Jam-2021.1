@@ -21,8 +21,6 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody2D rb;
 
-    PlayerShooting playerShooting;
-
     CharacterSwitch charSwitch;
     bool canJump;
 
@@ -30,7 +28,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        playerShooting = GetComponent<PlayerShooting>();
         charSwitch = GetComponent<CharacterSwitch>();
         rb = GetComponent<Rigidbody2D>();
         jumpSound = FMODUnity.RuntimeManager.CreateInstance("event:/Player/player_jump");
@@ -46,15 +43,9 @@ public class PlayerMovement : MonoBehaviour
         {
             canJump = true;
 
-            jumpSound.start();
-            jumpSound.release();
-
         }
 
         moveInput = Input.GetAxis("Horizontal");
-
-
-
 
         if (facingRight == false && moveInput > 0)
         {
@@ -88,37 +79,38 @@ public class PlayerMovement : MonoBehaviour
         canJump = false;
     }
 
-    public enum WalkMode { Idle, Run, Jump };
-    WalkMode walkMode = WalkMode.Idle;
+    public enum WalkMode { Reset, Idle, Run, Jump, Shoot };
+    public WalkMode walkMode = WalkMode.Reset;
 
     private void FixedUpdate()
     {
         if (isPaused) return;
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
-
-        if(playerShooting.isShooting)
-        {
-            Vector2 vel = new Vector2(0f, rb.velocity.y);
-            rb.velocity = vel;
-            return;
-        }
-
         if (isGrounded)
         {
             jumpCounter = extraJumps;
-            if (moveInput == 0 && walkMode != WalkMode.Idle)
+            if (walkMode == WalkMode.Reset)
             {
                 charSwitch.ChangeAnimationState(charSwitch.idleAnim);
                 walkMode = WalkMode.Idle;
             }
-            else if (moveInput != 0 && walkMode != WalkMode.Run)
+            else if (moveInput == 0 && walkMode != WalkMode.Idle && walkMode != WalkMode.Shoot)
+            {
+                charSwitch.ChangeAnimationState(charSwitch.idleAnim);
+                walkMode = WalkMode.Idle;
+            }
+            else if (moveInput != 0 && walkMode != WalkMode.Run && walkMode != WalkMode.Shoot)
             {
                 charSwitch.ChangeAnimationState(charSwitch.runAnim);
                 walkMode = WalkMode.Run;
             }
+            if (moveInput == 0) charSwitch.animator.SetBool("running", false);
         }
         Jump();
-        rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+        if (walkMode != WalkMode.Shoot)
+            rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+        else
+            rb.velocity = new Vector2(0, rb.velocity.y);
     }
 
     void Flip()

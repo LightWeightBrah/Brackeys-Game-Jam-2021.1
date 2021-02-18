@@ -43,17 +43,17 @@ public class CharacterSwitch : MonoBehaviour
 
         int previousSelectedPlayer = selectedPlayer;
 
-        if(Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
             if (selectedPlayer >= transform.childCount - 1)
                 selectedPlayer = 0;
             else
                 selectedPlayer++;
             FMODUnity.RuntimeManager.StudioSystem.setParameterByID(pID, selectedPlayer);
-            
+
         }
 
-        if(previousSelectedPlayer != selectedPlayer)
+        if (previousSelectedPlayer != selectedPlayer)
         {
             SelectPlayer();
             FMODUnity.RuntimeManager.PlayOneShot("event:/Player/char_change", transform.position);
@@ -63,7 +63,7 @@ public class CharacterSwitch : MonoBehaviour
     void SelectPlayer()
     {
         int i = 0;
-        foreach(Transform player in transform)
+        foreach (Transform player in transform)
         {
             if (i == selectedPlayer)
             {
@@ -103,10 +103,19 @@ public class CharacterSwitch : MonoBehaviour
 
     public void ChangeAnimationState(string newState)
     {
-        if (newState == runAnim || newState == idleAnim) animator.SetBool("running", newState == runAnim);
-        animator.Play(newState, 0, 0);
-
+        if (currentAnimationState == newState) return; // Pre check
+        if (newState == runAnim || newState == idleAnim)
+        {
+            animator.SetBool("running", newState == runAnim);
+        }
+        else if (newState == "")
+        {
+            if (animator.GetBool("running")) newState = runAnim;
+            else newState = idleAnim;
+        }
+        if (currentAnimationState == newState) return; // Post check
         currentAnimationState = newState;
+        animator.Play(newState, 0, 0);
     }
 
     public void SetIsPaused()
