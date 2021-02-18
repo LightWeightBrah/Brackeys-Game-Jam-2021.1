@@ -21,12 +21,19 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody2D rb;
 
+    CharacterSwitch charSwitch;
+    bool isJumping;
+
+    float jumpAnimCounter;
+
     private FMOD.Studio.EventInstance jumpSound;
 
     void Start()
     {
+        charSwitch = GetComponent<CharacterSwitch>();
         rb = GetComponent<Rigidbody2D>();
         jumpSound = FMODUnity.RuntimeManager.CreateInstance("event:/Player/player_jump");
+        jumpAnimCounter = 0.1f;
     }
 
     void Update()
@@ -40,13 +47,31 @@ public class PlayerMovement : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.W) && jumpCounter > 0)
         {
+            charSwitch.ChangeAnimationState(charSwitch.jumpAnim);
+
+
             rb.velocity = Vector2.up * jumpForce;
             jumpCounter--;
             jumpSound.start();
-            //jumpSound.release();
+            jumpSound.release();
+
+            isJumping = true;
         }
 
         moveInput = Input.GetAxis("Horizontal");
+
+        if(!isJumping)
+        {
+            if (moveInput != 0)
+            {
+                charSwitch.ChangeAnimationState(charSwitch.runAnim);
+            }
+            else
+            {
+                charSwitch.ChangeAnimationState(charSwitch.idleAnim);
+            }
+        }
+        
 
         if(facingRight == false && moveInput > 0)
         {
@@ -63,6 +88,19 @@ public class PlayerMovement : MonoBehaviour
         if (isPaused) return;
 
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
+
+        if(isGrounded)
+        {
+            if(jumpAnimCounter < 0f)
+            {
+                isJumping = false;
+                jumpAnimCounter = 0.1f;
+            }
+            else
+            {
+                jumpAnimCounter -= Time.deltaTime;
+            }
+        }
 
         rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
     }
