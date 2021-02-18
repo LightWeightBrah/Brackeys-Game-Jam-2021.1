@@ -24,4 +24,25 @@ public class CharacterStats : MonoBehaviour
 
     [Header("UI")]
     public Sprite characterIcon;
+
+    PlayerShooting shooting;
+
+    private void Awake()
+    {
+        shooting = GetComponentInParent<PlayerShooting>();
+    }
+
+    public void Shoot()
+    {
+        shooting.Shoot();
+    }
+
+    public void StopShooting()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            return;
+        }
+        shooting.isShooting = false;
+    }
 }

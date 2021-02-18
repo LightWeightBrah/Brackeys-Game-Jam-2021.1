@@ -15,7 +15,7 @@ public class CharacterSwitch : MonoBehaviour
     CharacterStats charStats;
 
     public Animator animator;
-    string currentAnimationState;
+    public string currentAnimationState;
 
     public string idleAnim;
     public string runAnim;
@@ -103,9 +103,8 @@ public class CharacterSwitch : MonoBehaviour
 
     public void ChangeAnimationState(string newState)
     {
-        if (currentAnimationState == newState) return;
-
-        animator.Play(newState);
+        if (newState == runAnim || newState == idleAnim) animator.SetBool("running", newState == runAnim);
+        animator.Play(newState, 0, 0);
 
         currentAnimationState = newState;
     }

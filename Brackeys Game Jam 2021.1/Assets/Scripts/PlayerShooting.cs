@@ -12,22 +12,33 @@ public class PlayerShooting : MonoBehaviour
 
     public bool isPaused;
 
+    CharacterSwitch charSwitch;
+
+    public bool isShooting;
+
+
+    private void Awake()
+    {
+        charSwitch = GetComponent<CharacterSwitch>();
+    }
+
     void Update()
     {
         if (isPaused) return;
 
-        if(shotsCounter > 0)
+
+        if (Input.GetKey(KeyCode.Space))
         {
-            shotsCounter -= Time.deltaTime;
+            charSwitch.animator.Play(charSwitch.shootAnim);
+            isShooting = true;
         }
-        else
-        {
-            if (Input.GetKey(KeyCode.Space))
-            {
-                Instantiate(projectile, firePoint.position, firePoint.rotation);
-                shotsCounter = timeBtwShots;
-            }
-        }
+
+
+    }
+
+    public void Shoot()
+    {
+        Instantiate(projectile, firePoint.position, firePoint.rotation);
 
     }
 }
