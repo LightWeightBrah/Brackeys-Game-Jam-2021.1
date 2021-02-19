@@ -24,13 +24,13 @@ public class PlayerMovement : MonoBehaviour
     CharacterSwitch charSwitch;
     bool canJump;
 
-    private FMOD.Studio.EventInstance jumpSound;
+    
 
     void Start()
     {
         charSwitch = GetComponent<CharacterSwitch>();
         rb = GetComponent<Rigidbody2D>();
-        jumpSound = FMODUnity.RuntimeManager.CreateInstance("event:/Player/player_jump");
+     
     }
 
     void Update()
@@ -70,7 +70,6 @@ public class PlayerMovement : MonoBehaviour
         if (canJump)
         {
             walkMode = WalkMode.Jump;
-            jumpSound.start();
             charSwitch.ChangeAnimationState(charSwitch.jumpAnim);
             rb.velocity = Vector2.up * jumpForce;
             jumpCounter--;
