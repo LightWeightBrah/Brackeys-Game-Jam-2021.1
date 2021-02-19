@@ -94,7 +94,6 @@ public class CharacterSwitch : MonoBehaviour
         playerMovement.jumpForce = charStats.jumpForce;
         playerMovement.extraJumps = charStats.extraJumps;
 
-        playerShooting.timeBtwShots = charStats.timeBtwShots;
         playerShooting.firePoint = charStats.firePoint;
         playerShooting.projectile = charStats.projectile;
 

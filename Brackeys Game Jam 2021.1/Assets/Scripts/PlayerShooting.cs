@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour
 {
-    public float timeBtwShots;
-    float shotsCounter;
-
     public Transform firePoint;
     public GameObject projectile;
     public bool isPaused;
@@ -22,7 +19,6 @@ public class PlayerShooting : MonoBehaviour
 
     private void Start()
     {
-        timeBtwShots = 0.35f;
     }
 
     bool shootanimplaying = false;
@@ -30,7 +26,7 @@ public class PlayerShooting : MonoBehaviour
     {
         if (isPaused) return;
 
-        if (Input.GetKeyDown(KeyCode.Space) && shotsCounter <= 0)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if (!shootanimplaying)
             {
@@ -38,7 +34,6 @@ public class PlayerShooting : MonoBehaviour
                 shootanimplaying = true;
             }
             playerMovement.walkMode = PlayerMovement.WalkMode.Shoot;
-            shotsCounter = timeBtwShots - .075f;
         }
         else if (Input.GetKeyUp(KeyCode.Space))
         {
@@ -47,19 +42,14 @@ public class PlayerShooting : MonoBehaviour
             shootanimplaying = false;
         }
 
-        if (shotsCounter > 0)
-        {
-            shotsCounter -= Time.deltaTime;
-        }
-        else if (playerMovement.walkMode == PlayerMovement.WalkMode.Shoot)
+  
+        if (playerMovement.walkMode == PlayerMovement.WalkMode.Shoot)
         {
             if (!shootanimplaying)
             {
                 charSwitch.ChangeAnimationState(charSwitch.shootAnim);
                 shootanimplaying = true;
             }
-            Instantiate(projectile, firePoint.position, firePoint.rotation);
-            shotsCounter = timeBtwShots;
         }
     }
 }

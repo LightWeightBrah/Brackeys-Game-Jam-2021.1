@@ -36,7 +36,7 @@ public class CharacterStats : MonoBehaviour
 
     public void Shoot()
     {
-       // shooting.Shoot();
+        Instantiate(projectile, firePoint.position, firePoint.rotation);
     }
 
 }
