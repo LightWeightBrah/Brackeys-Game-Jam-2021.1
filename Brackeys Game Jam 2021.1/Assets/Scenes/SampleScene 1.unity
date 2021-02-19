@@ -13850,11 +13850,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8744204869360280608, guid: 97fa210b4b75d4440a40bf4acd2d1496, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 403.2
       objectReference: {fileID: 0}
     - target: {fileID: 8744204869360280608, guid: 97fa210b4b75d4440a40bf4acd2d1496, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -28.3
       objectReference: {fileID: 0}
     - target: {fileID: 8744204869360280608, guid: 97fa210b4b75d4440a40bf4acd2d1496, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14032,7 +14032,9 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 30, y: 14}
+    - - {x: 32.75595, y: 9.871436}
+      - {x: 13.566284, y: 9.91381}
+      - {x: 11.2855835, y: 9.842506}
       - {x: -15, y: 6}
       - {x: -15, y: -30}
       - {x: 30, y: -30}
@@ -14391,7 +14393,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ConfineMode: 0
   m_BoundingVolume: {fileID: 0}
-  m_BoundingShape2D: {fileID: 149370000}
+  m_BoundingShape2D: {fileID: 765908740}
   m_ConfineScreenEdges: 1
   m_Damping: 0
 --- !u!114 &805256843
@@ -14410,7 +14412,7 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 10
+  m_Priority: 11
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 886005963}
