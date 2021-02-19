@@ -26,6 +26,8 @@ public class FallingEnemy : Enemy
 
     bool facingRight = true;
 
+    bool canRotate;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -37,11 +39,16 @@ public class FallingEnemy : Enemy
     {
         Gizmos.DrawWireSphere(transform.position, rangeToAttackPlayer);
         Gizmos.DrawWireSphere(transform.position, range);
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, 3f);
     }
 
     private void Update()
     {
-        if(Vector2.Distance(transform.position, player.transform.position) < rangeToAttackPlayer)
+
+
+        if (Vector2.Distance(transform.position, player.transform.position) < rangeToAttackPlayer)
         {
             player.GetComponent<IDamageable>().TakeDamage(damage);
         }
@@ -51,7 +58,8 @@ public class FallingEnemy : Enemy
 
     void ChasePlayer()
     {
-        if(!isInRange)
+
+        if (!isInRange)
         {
             if (Vector2.Distance(transform.position, player.transform.position) > range)
             {
@@ -62,18 +70,37 @@ public class FallingEnemy : Enemy
             {
                 isInRange = true;
             }
+
         }
 
         if (!hasLanded) return;
 
-        if(transform.position.x < player.transform.position.x)
+        if (Vector2.Distance(transform.position, player.transform.position) > 3f)
         {
-            transform.localScale = new Vector2(-1, 1);
+            canRotate = true;
         }
         else
         {
-            transform.localScale = new Vector2(1, 1);
+            canRotate = false;
         }
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            Debug.Log("Can rotate " + canRotate);
+        }
+
+        if (canRotate)
+        {
+            if (transform.position.x < player.transform.position.x)
+            {
+                transform.localScale = new Vector2(-1, 1);
+            }
+            else
+            {
+                transform.localScale = new Vector2(1, 1);
+            }
+        }
+
 
         if (waitCounter > 0)
         {
@@ -81,16 +108,18 @@ public class FallingEnemy : Enemy
             return;
         }
 
-        if(transform.position.x < player.transform.position.x)
+        if (transform.position.x < player.transform.position.x)
         {
             //enemy is to the left side of the player => move right
             transform.position += transform.right * speed * Time.deltaTime;
         }
-        else
+        else if (transform.position.x > player.transform.position.x)
         {
             //enemy is to the right side of the player => move left
             transform.position += -transform.right * speed * Time.deltaTime;
         }
+
+
     }
 
     private void FixedUpdate()
