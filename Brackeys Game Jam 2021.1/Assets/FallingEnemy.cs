@@ -18,8 +18,17 @@ public class FallingEnemy : Enemy
     [SerializeField] float timeToWaitAfterLanding;
     float waitCounter;
 
+    [SerializeField] float range;
+
+    bool isInRange;
+
+    Rigidbody2D rb;
+
+    bool facingRight = true;
+
     private void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         waitCounter = timeToWaitAfterLanding;
     }
 
@@ -27,6 +36,7 @@ public class FallingEnemy : Enemy
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(transform.position, rangeToAttackPlayer);
+        Gizmos.DrawWireSphere(transform.position, range);
     }
 
     private void Update()
@@ -41,9 +51,31 @@ public class FallingEnemy : Enemy
 
     void ChasePlayer()
     {
+        if(!isInRange)
+        {
+            if (Vector2.Distance(transform.position, player.transform.position) > range)
+            {
+                rb.velocity = Vector2.zero;
+                return;
+            }
+            else
+            {
+                isInRange = true;
+            }
+        }
+
         if (!hasLanded) return;
 
-        if(waitCounter > 0)
+        if(transform.position.x < player.transform.position.x)
+        {
+            transform.localScale = new Vector2(-1, 1);
+        }
+        else
+        {
+            transform.localScale = new Vector2(1, 1);
+        }
+
+        if (waitCounter > 0)
         {
             waitCounter -= Time.deltaTime;
             return;
