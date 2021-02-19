@@ -75,7 +75,7 @@ public class FallingEnemy : Enemy
 
         if (!hasLanded) return;
 
-        if (Vector2.Distance(transform.position, player.transform.position) > 3f)
+        if (Vector2.Distance(transform.position, player.transform.position) > 0.1f)
         {
             canRotate = true;
         }
@@ -107,6 +107,9 @@ public class FallingEnemy : Enemy
             waitCounter -= Time.deltaTime;
             return;
         }
+
+        if (Vector2.Distance(transform.position, player.transform.position) < 0.3f) return;
+
 
         if (transform.position.x < player.transform.position.x)
         {

@@ -17,12 +17,17 @@ public class EnemyBullet : MonoBehaviour
 
     GameObject player;
 
+    Vector3 offset;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         destination = player.transform.position;
         Invoke("DestroyProjectile", lifeTime);
-        direction = player.transform.position - transform.position;
+
+        offset = new Vector3(-0.295f, 1.5f, 0f);
+
+        direction = player.transform.position - transform.position + offset;
     }
 
     void Update()

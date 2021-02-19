@@ -69,8 +69,6 @@ public class CharacterSwitch : MonoBehaviour
             {
                 player.gameObject.SetActive(true);
                 charStats = player.GetComponent<CharacterStats>();
-                Debug.Log(charStats);
-                Debug.Log(playerMovement);
                 SwitchStats();
             }
             else

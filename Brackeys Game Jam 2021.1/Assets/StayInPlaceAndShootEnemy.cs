@@ -11,6 +11,8 @@ public class StayInPlaceAndShootEnemy : Enemy
 
     [SerializeField] GameObject bullet;
 
+    [SerializeField] GameObject firePoint;
+
     private void Update()
     {
         shootCounter -= Time.deltaTime;
@@ -19,7 +21,7 @@ public class StayInPlaceAndShootEnemy : Enemy
         {
             if(shootCounter <= 0f)
             {
-                Instantiate(bullet,transform.position, Quaternion.identity);
+                Instantiate(bullet,firePoint.transform.position, Quaternion.identity);
                 shootCounter = howOftenShoot;
             }
         }

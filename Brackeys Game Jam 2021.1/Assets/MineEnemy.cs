@@ -6,20 +6,21 @@ public class MineEnemy : Enemy
 {
     [SerializeField] int damage;
 
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    [SerializeField] GameObject checkForPlayer;
+    [SerializeField] Vector2 boxSize;
+    [SerializeField] LayerMask whatIsPlayer;
+    private void Update()
     {
-        if (collision.gameObject.tag == "Player")
+        if(Physics2D.OverlapBox(checkForPlayer.transform.position,boxSize, 0f, whatIsPlayer))
         {
             player.GetComponent<IDamageable>().TakeDamage(damage);
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnDrawGizmos()
     {
-        if(collision.gameObject.tag == "Player")
-        {
-            player.GetComponent<IDamageable>().TakeDamage(damage);
-        }
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireCube(checkForPlayer.transform.position, boxSize);
     }
+
 }

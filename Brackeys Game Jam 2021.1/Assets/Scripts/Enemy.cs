@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
     public int health;
 
-    protected void Awake()
+    protected virtual void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
     }

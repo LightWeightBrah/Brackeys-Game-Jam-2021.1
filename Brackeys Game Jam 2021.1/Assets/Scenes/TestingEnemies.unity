@@ -2542,36 +2542,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &719506350
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 719506351}
-  m_Layer: 7
-  m_Name: check
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &719506351
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 719506350}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.58, y: 1.71, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1387783544}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &753839234
 GameObject:
   m_ObjectHideFlags: 0
@@ -3748,14 +3718,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 585489686309238828, guid: 5583c2b768414244482f96aa88db28ef, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.56
-      objectReference: {fileID: 0}
-    - target: {fileID: 585489686309238828, guid: 5583c2b768414244482f96aa88db28ef, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.52
-      objectReference: {fileID: 0}
     - target: {fileID: 5526544694749118376, guid: 5583c2b768414244482f96aa88db28ef, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -3800,77 +3762,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5526544694749118378, guid: 5583c2b768414244482f96aa88db28ef, type: 3}
-      propertyPath: m_Size.x
-      value: 1.1637073
-      objectReference: {fileID: 0}
-    - target: {fileID: 5526544694749118378, guid: 5583c2b768414244482f96aa88db28ef, type: 3}
-      propertyPath: m_Size.y
-      value: 4.511503
-      objectReference: {fileID: 0}
-    - target: {fileID: 5526544694749118378, guid: 5583c2b768414244482f96aa88db28ef, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.6171081
-      objectReference: {fileID: 0}
-    - target: {fileID: 5526544694749118378, guid: 5583c2b768414244482f96aa88db28ef, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.39702892
-      objectReference: {fileID: 0}
     - target: {fileID: 5526544694749118379, guid: 5583c2b768414244482f96aa88db28ef, type: 3}
       propertyPath: m_Name
       value: FallingEnemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 5526544694749118388, guid: 5583c2b768414244482f96aa88db28ef, type: 3}
-      propertyPath: range
-      value: 19.73
-      objectReference: {fileID: 0}
-    - target: {fileID: 5526544694749118388, guid: 5583c2b768414244482f96aa88db28ef, type: 3}
-      propertyPath: boxCheck
-      value: 
-      objectReference: {fileID: 719506350}
-    - target: {fileID: 5526544694749118388, guid: 5583c2b768414244482f96aa88db28ef, type: 3}
-      propertyPath: CheckSize.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5526544694749118388, guid: 5583c2b768414244482f96aa88db28ef, type: 3}
-      propertyPath: CheckSize.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5526544694749118388, guid: 5583c2b768414244482f96aa88db28ef, type: 3}
-      propertyPath: playerLayer.m_Bits
-      value: 257
-      objectReference: {fileID: 0}
-    - target: {fileID: 5526544694901543715, guid: 5583c2b768414244482f96aa88db28ef, type: 3}
-      propertyPath: m_Size.x
-      value: 4.68
-      objectReference: {fileID: 0}
-    - target: {fileID: 5526544694901543715, guid: 5583c2b768414244482f96aa88db28ef, type: 3}
-      propertyPath: m_Size.y
-      value: 7.07
-      objectReference: {fileID: 0}
-    - target: {fileID: 5526544694901543715, guid: 5583c2b768414244482f96aa88db28ef, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 8380da9a2a2a0a741a74cb7d1a21d060, type: 3}
-    - target: {fileID: 5526544694901543715, guid: 5583c2b768414244482f96aa88db28ef, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5526544694901543715, guid: 5583c2b768414244482f96aa88db28ef, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5526544694901543715, guid: 5583c2b768414244482f96aa88db28ef, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5526544694901543715, guid: 5583c2b768414244482f96aa88db28ef, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5526544694901543725, guid: 5583c2b768414244482f96aa88db28ef, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5583c2b768414244482f96aa88db28ef, type: 3}
@@ -3956,11 +3850,6 @@ Transform:
   m_Father: {fileID: 688892819}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!4 &1387783544 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5526544694749118376, guid: 5583c2b768414244482f96aa88db28ef, type: 3}
-  m_PrefabInstance: {fileID: 1273488101}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1454281177
 GameObject:
   m_ObjectHideFlags: 0
@@ -5321,10 +5210,6 @@ PrefabInstance:
     - target: {fileID: 587310186919302043, guid: b8458a1ff4900b74c9943e98505f10ac, type: 3}
       propertyPath: m_Name
       value: StayInPlaceEnemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 587310186919302043, guid: b8458a1ff4900b74c9943e98505f10ac, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8458a1ff4900b74c9943e98505f10ac, type: 3}

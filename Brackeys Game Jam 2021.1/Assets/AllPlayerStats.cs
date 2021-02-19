@@ -8,11 +8,15 @@ public class AllPlayerStats : MonoBehaviour, IDamageable
     float takeDamageCounter;
 
     public int health;
+
+    void Update()
+    {
+        takeDamageCounter -= Time.deltaTime;
+    }
     public void TakeDamage(int damage)
     {
         if(takeDamageCounter > 0)
         {
-            takeDamageCounter -= Time.deltaTime;
             return;
         }
         else
