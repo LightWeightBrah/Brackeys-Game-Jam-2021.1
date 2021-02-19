@@ -103,7 +103,6 @@ public class CharacterSwitch : MonoBehaviour
 
     public void ChangeAnimationState(string newState)
     {
-        if (currentAnimationState == newState) return; // Pre check
         if (newState == runAnim || newState == idleAnim)
         {
             animator.SetBool("running", newState == runAnim);
@@ -113,7 +112,12 @@ public class CharacterSwitch : MonoBehaviour
             if (animator.GetBool("running")) newState = runAnim;
             else newState = idleAnim;
         }
-        if (currentAnimationState == newState) return; // Post check
+
+        if(newState != charStats.jumpAnim)
+        {
+            if (currentAnimationState == newState) return; // Post check
+        }
+
         currentAnimationState = newState;
         animator.Play(newState, 0, 0);
     }
