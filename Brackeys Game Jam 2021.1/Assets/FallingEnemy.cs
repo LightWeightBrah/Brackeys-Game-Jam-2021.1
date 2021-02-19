@@ -27,11 +27,16 @@ public class FallingEnemy : Enemy
     bool facingRight = true;
 
     bool canRotate;
+    bool soundHasPlayed = false;
+
+    private FMOD.Studio.EventInstance cutterEnemySound;
+    private FMOD.Studio.EventInstance cutterEnemyDieSound;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         waitCounter = timeToWaitAfterLanding;
+        
     }
 
 
@@ -64,16 +69,26 @@ public class FallingEnemy : Enemy
             if (Vector2.Distance(transform.position, player.transform.position) > range)
             {
                 rb.velocity = Vector2.zero;
+                cutterEnemySound.release();
                 return;
             }
             else
             {
                 isInRange = true;
+                
             }
 
         }
 
         if (!hasLanded) return;
+
+        if (!soundHasPlayed)
+        {
+            cutterEnemySound = FMODUnity.RuntimeManager.CreateInstance("event:/Enemy/en_cutter");
+            FMODUnity.RuntimeManager.AttachInstanceToGameObject(cutterEnemySound, transform, GetComponent<Rigidbody2D>());
+            cutterEnemySound.start();
+            soundHasPlayed = true;
+        }
 
         if (Vector2.Distance(transform.position, player.transform.position) > 0.1f)
         {
@@ -134,5 +149,12 @@ public class FallingEnemy : Enemy
         }
     }
 
-
+    private void OnDestroy()
+    {
+        cutterEnemySound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        cutterEnemyDieSound = FMODUnity.RuntimeManager.CreateInstance("event:/Enemy/en_cutter_die");
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(cutterEnemyDieSound, transform, GetComponent<Rigidbody2D>());
+        cutterEnemyDieSound.start();
+    }
 }
+
