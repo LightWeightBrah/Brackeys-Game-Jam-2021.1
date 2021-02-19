@@ -32,8 +32,11 @@ public class FallingEnemy : Enemy
     private FMOD.Studio.EventInstance cutterEnemySound;
     private FMOD.Studio.EventInstance cutterEnemyDieSound;
 
+    Vector2 position;
+
     private void Start()
     {
+        position = transform.position;
         rb = GetComponent<Rigidbody2D>();
         waitCounter = timeToWaitAfterLanding;
         
@@ -69,6 +72,7 @@ public class FallingEnemy : Enemy
             if (Vector2.Distance(transform.position, player.transform.position) > range)
             {
                 rb.velocity = Vector2.zero;
+                transform.position = position;
                 cutterEnemySound.release();
                 return;
             }
