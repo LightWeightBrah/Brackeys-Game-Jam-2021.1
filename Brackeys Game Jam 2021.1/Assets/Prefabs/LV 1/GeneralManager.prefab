@@ -63,8 +63,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeScreen: {fileID: 0}
-  fadeSpeed: 0
+  fadeSpeed: 1
   waitToLoad: 1
-  cutscenes: []
-  areCutScenesEnabled: 0
+  cutscenes:
+  - {fileID: 0}
+  areCutScenesEnabled: 1
   GameOverScreen: {fileID: 0}
+  everythingInCutScene: {fileID: 0}
+  characterSwitch: {fileID: 0}
+  currentSceneName: LV 1

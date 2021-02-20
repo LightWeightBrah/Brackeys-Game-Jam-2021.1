@@ -374,11 +374,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8744204869360280608, guid: 97fa210b4b75d4440a40bf4acd2d1496, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 168
       objectReference: {fileID: 0}
     - target: {fileID: 8744204869360280608, guid: 97fa210b4b75d4440a40bf4acd2d1496, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -10.2
       objectReference: {fileID: 0}
     - target: {fileID: 8744204869360280608, guid: 97fa210b4b75d4440a40bf4acd2d1496, type: 3}
       propertyPath: m_LocalPosition.z
@@ -19014,6 +19014,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LeftRightEnemyBlob (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8994269781569548969, guid: d7b1dfb567b3013448656afa71bd1dae, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8994269781569548970, guid: d7b1dfb567b3013448656afa71bd1dae, type: 3}
       propertyPath: m_RootOrder
       value: 64
@@ -27178,6 +27182,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8174768082751941334, guid: a4ed38875a0f28247ba2b82a65fa1edf, type: 3}
   m_PrefabInstance: {fileID: 496203001}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1169739872 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 343522217002580501, guid: 0d5704f53edb2054c8a578dae15a16de, type: 3}
+  m_PrefabInstance: {fileID: 1949827331}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1177476770
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28026,17 +28041,6 @@ Transform:
   m_Father: {fileID: 1792501140}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &1313131181 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4477827664169593766, guid: 0d5704f53edb2054c8a578dae15a16de, type: 3}
-  m_PrefabInstance: {fileID: 1949827331}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1326801112
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30295,6 +30299,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LeftRightEnemyBlob (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8994269781569548969, guid: d7b1dfb567b3013448656afa71bd1dae, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8994269781569548970, guid: d7b1dfb567b3013448656afa71bd1dae, type: 3}
       propertyPath: m_RootOrder
       value: 63
@@ -30808,10 +30816,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1443296038, guid: 5bd8c71edd400854f9a0418e3906041b, type: 3}
-      propertyPath: fadeSpeed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1443296038, guid: 5bd8c71edd400854f9a0418e3906041b, type: 3}
       propertyPath: fadeScreen
       value: 
       objectReference: {fileID: 1528729185}
@@ -30824,18 +30828,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 941192157}
     - target: {fileID: 1443296038, guid: 5bd8c71edd400854f9a0418e3906041b, type: 3}
-      propertyPath: currentSceneName
-      value: LV 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1443296038, guid: 5bd8c71edd400854f9a0418e3906041b, type: 3}
-      propertyPath: areCutScenesEnabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1443296038, guid: 5bd8c71edd400854f9a0418e3906041b, type: 3}
-      propertyPath: cutscenes.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1443296038, guid: 5bd8c71edd400854f9a0418e3906041b, type: 3}
       propertyPath: everythingInCutScene
       value: 
       objectReference: {fileID: 51496514}
@@ -30843,10 +30835,6 @@ PrefabInstance:
       propertyPath: cutscenes.Array.data[0]
       value: 
       objectReference: {fileID: 589164784}
-    - target: {fileID: 1443296038, guid: 5bd8c71edd400854f9a0418e3906041b, type: 3}
-      propertyPath: cutscenes.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4210792054046319240, guid: 5bd8c71edd400854f9a0418e3906041b, type: 3}
       propertyPath: pauseMenu
       value: 
@@ -30866,7 +30854,7 @@ PrefabInstance:
     - target: {fileID: 4210792054046319240, guid: 5bd8c71edd400854f9a0418e3906041b, type: 3}
       propertyPath: currentPlayerIcon
       value: 
-      objectReference: {fileID: 1313131181}
+      objectReference: {fileID: 1169739872}
     - target: {fileID: 4210792054046319240, guid: 5bd8c71edd400854f9a0418e3906041b, type: 3}
       propertyPath: pauseMenuAnimator
       value: 
@@ -33005,6 +32993,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 469757303, guid: 0d5704f53edb2054c8a578dae15a16de, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1462104561, guid: 0d5704f53edb2054c8a578dae15a16de, type: 3}
       propertyPath: m_Sprite
       value: 
