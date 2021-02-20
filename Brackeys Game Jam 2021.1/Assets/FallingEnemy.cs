@@ -27,7 +27,7 @@ public class FallingEnemy : Enemy
     bool facingRight = true;
 
     bool canRotate;
-    bool soundHasPlayed = false;
+    private bool soundHasPlayed = false;
 
     private FMOD.Studio.EventInstance cutterEnemySound;
     private FMOD.Studio.EventInstance cutterEnemyDieSound;
@@ -39,6 +39,7 @@ public class FallingEnemy : Enemy
         position = transform.position;
         rb = GetComponent<Rigidbody2D>();
         waitCounter = timeToWaitAfterLanding;
+        soundHasPlayed = false;
         
     }
 

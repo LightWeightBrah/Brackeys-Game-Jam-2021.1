@@ -19,6 +19,11 @@ public class LeftRightEnemy : Enemy
 
     [SerializeField] Vector2 boxSize;
 
+    FMOD.Studio.EventInstance dieSound;
+    FMOD.Studio.EventInstance ballSound;
+
+    private bool soundHasPlayed = false;
+
     void Update()
     {
         if(!shouldUseBoxCollider)
@@ -38,7 +43,13 @@ public class LeftRightEnemy : Enemy
         
 
         transform.position += transform.right * speed * Time.deltaTime;
-
+        if (!soundHasPlayed)
+        {
+            ballSound = FMODUnity.RuntimeManager.CreateInstance("event:/Enemy/en_blob");
+            FMODUnity.RuntimeManager.AttachInstanceToGameObject(ballSound, transform, GetComponent<Rigidbody2D>());
+            ballSound.start();
+            soundHasPlayed = true;
+        }
         RaycastHit2D ground = Physics2D.Raycast(groundCheck.position, Vector2.down, 1f);
         Debug.Log("enemy name is " + gameObject.name + " Ground collider is " + ground.collider);
         if(ground.collider == false)
@@ -69,4 +80,14 @@ public class LeftRightEnemy : Enemy
             Gizmos.DrawWireCube(checkForPlayer.transform.position, boxSize);
         }
     }
+
+    private void OnDestroy()
+    {
+        ballSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        dieSound = FMODUnity.RuntimeManager.CreateInstance("event:/Enemy/en_die");
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(dieSound, transform, GetComponent<Rigidbody2D>());
+        dieSound.start();
+        dieSound.release();
+    }
 }
+
