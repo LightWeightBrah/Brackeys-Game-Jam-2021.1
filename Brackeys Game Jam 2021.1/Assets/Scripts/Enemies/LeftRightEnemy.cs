@@ -19,6 +19,9 @@ public class LeftRightEnemy : Enemy
 
     [SerializeField] Vector2 boxSize;
 
+    [SerializeField] LayerMask whatIsGround;
+
+    [SerializeField] GameObject checkForWall;
     FMOD.Studio.EventInstance dieSound;
     FMOD.Studio.EventInstance ballSound;
 
@@ -40,7 +43,7 @@ public class LeftRightEnemy : Enemy
                 player.GetComponent<IDamageable>().TakeDamage(damage);
             }
         }
-        
+
 
         transform.position += transform.right * speed * Time.deltaTime;
         if (!soundHasPlayed)
@@ -50,11 +53,12 @@ public class LeftRightEnemy : Enemy
             ballSound.start();
             soundHasPlayed = true;
         }
-        RaycastHit2D ground = Physics2D.Raycast(groundCheck.position, Vector2.down, 1f);
-        Debug.Log("enemy name is " + gameObject.name + " Ground collider is " + ground.collider);
-        if(ground.collider == false)
+        RaycastHit2D ground = Physics2D.Raycast(groundCheck.position, Vector2.down, 1f, whatIsGround);
+
+        RaycastHit2D isWall = Physics2D.Raycast(checkForWall.transform.position, Vector2.down, 1f, whatIsGround);
+
+        if(ground.collider == false || isWall)
         {
-            Debug.Log("Ground is false ");
             if(isMovingRight)
             {
                 transform.eulerAngles = new Vector3(transform.eulerAngles.x, -180, transform.eulerAngles.z);
@@ -90,4 +94,3 @@ public class LeftRightEnemy : Enemy
         dieSound.release();
     }
 }
-
