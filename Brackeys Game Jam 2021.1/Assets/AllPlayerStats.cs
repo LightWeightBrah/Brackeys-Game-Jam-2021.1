@@ -17,6 +17,8 @@ public class AllPlayerStats : MonoBehaviour, IDamageable
     [SerializeField] Color colorWhenHit;
     [SerializeField] Color defaultColor;
 
+    [SerializeField] GameObject deathScreen;
+
     void Start()
     {
         hpText.text = health.ToString();
@@ -64,6 +66,8 @@ public class AllPlayerStats : MonoBehaviour, IDamageable
 
     void Destroy()
     {
+        deathScreen.gameObject.SetActive(true);
+        charSwitch.SetIsPaused();
         Debug.Log("Player has died");
     }
 }

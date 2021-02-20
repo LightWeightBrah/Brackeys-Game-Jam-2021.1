@@ -880,7 +880,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBetweenTakingDamage: 0.5
-  health: 1
+  health: 3
   hpText: {fileID: 0}
   isShielded: 0
   charSwitch: {fileID: 8744204869360280638}
