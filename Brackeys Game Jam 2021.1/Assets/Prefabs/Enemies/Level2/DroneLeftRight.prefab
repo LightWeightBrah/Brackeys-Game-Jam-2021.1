@@ -30,6 +30,36 @@ Transform:
   m_Father: {fileID: 6285956438209759038}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5760590837865108709
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2200765670814995652}
+  m_Layer: 7
+  m_Name: CheckForWall
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2200765670814995652
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5760590837865108709}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.28, y: 1.82, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6285956438209759038}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6285956438093769659
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,6 +202,7 @@ Transform:
   - {fileID: 6285956438093769658}
   - {fileID: 1418102584645271738}
   - {fileID: 1887358113045790536}
+  - {fileID: 2200765670814995652}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -199,6 +230,10 @@ MonoBehaviour:
     m_Bits: 256
   shouldUseBoxCollider: 1
   boxSize: {x: 2.5, y: 1.3}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 576
+  checkForWall: {fileID: 5760590837865108709}
 --- !u!50 &6285956438209759039
 Rigidbody2D:
   serializedVersion: 4
