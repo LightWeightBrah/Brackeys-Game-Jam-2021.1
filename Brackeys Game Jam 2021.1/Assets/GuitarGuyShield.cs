@@ -91,6 +91,7 @@ public class GuitarGuyShield : MonoBehaviour
         durationCounter = durationOfShield;
         hasPressedSpace = false;
         allPlayerStats.isShielded = false;
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByID(pID2, 0f);
     }
 
 }
