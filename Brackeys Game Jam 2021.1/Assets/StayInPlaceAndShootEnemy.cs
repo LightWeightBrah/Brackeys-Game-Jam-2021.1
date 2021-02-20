@@ -12,6 +12,8 @@ public class StayInPlaceAndShootEnemy : Enemy
     [SerializeField] GameObject bullet;
 
     [SerializeField] GameObject firePoint;
+    FMOD.Studio.EventInstance shoot;
+    FMOD.Studio.EventInstance dieSound;
 
     private void Update()
     {
@@ -23,7 +25,19 @@ public class StayInPlaceAndShootEnemy : Enemy
             {
                 Instantiate(bullet,firePoint.transform.position, Quaternion.identity);
                 shootCounter = howOftenShoot;
+                shoot = FMODUnity.RuntimeManager.CreateInstance("event:/Enemy/en_pencil_shoot");
+                FMODUnity.RuntimeManager.AttachInstanceToGameObject(shoot, transform, GetComponent<Rigidbody2D>());
+                shoot.start();
+                shoot.release();
             }
         }
+    }
+
+    private void OnDestroy()
+    {
+        dieSound = FMODUnity.RuntimeManager.CreateInstance("event:/Enemy/en_die");
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(dieSound, transform, GetComponent<Rigidbody2D>());
+        dieSound.start();
+        dieSound.release();
     }
 }

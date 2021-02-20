@@ -18,6 +18,7 @@ public class AllPlayerStats : MonoBehaviour, IDamageable
     [SerializeField] Color defaultColor;
 
     [SerializeField] GameObject deathScreen;
+    bool dieSoundPlayed = false;
 
     void Start()
     {
@@ -46,6 +47,7 @@ public class AllPlayerStats : MonoBehaviour, IDamageable
         else
         {
             Debug.Log("Player takes damage");
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Player/char_damage", transform.position);
 
             charSwitch.sr.color = colorWhenHit;
             health -= damage;
@@ -66,6 +68,12 @@ public class AllPlayerStats : MonoBehaviour, IDamageable
 
     void Destroy()
     {
+        if (!dieSoundPlayed)
+        {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Player/char_die", transform.position);
+            dieSoundPlayed = true;
+        }
+        
         deathScreen.gameObject.SetActive(true);
         charSwitch.SetIsPaused();
         Debug.Log("Player has died");

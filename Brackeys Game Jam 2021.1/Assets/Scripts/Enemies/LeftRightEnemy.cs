@@ -22,6 +22,10 @@ public class LeftRightEnemy : Enemy
     [SerializeField] LayerMask whatIsGround;
 
     [SerializeField] GameObject checkForWall;
+    FMOD.Studio.EventInstance dieSound;
+    FMOD.Studio.EventInstance ballSound;
+
+    private bool soundHasPlayed = false;
 
     void Update()
     {
@@ -39,10 +43,16 @@ public class LeftRightEnemy : Enemy
                 player.GetComponent<IDamageable>().TakeDamage(damage);
             }
         }
-        
+
 
         transform.position += transform.right * speed * Time.deltaTime;
-
+        if (!soundHasPlayed)
+        {
+            ballSound = FMODUnity.RuntimeManager.CreateInstance("event:/Enemy/en_blob");
+            FMODUnity.RuntimeManager.AttachInstanceToGameObject(ballSound, transform, GetComponent<Rigidbody2D>());
+            ballSound.start();
+            soundHasPlayed = true;
+        }
         RaycastHit2D ground = Physics2D.Raycast(groundCheck.position, Vector2.down, 1f, whatIsGround);
 
         RaycastHit2D isWall = Physics2D.Raycast(checkForWall.transform.position, Vector2.down, 1f, whatIsGround);
@@ -73,5 +83,14 @@ public class LeftRightEnemy : Enemy
         {
             Gizmos.DrawWireCube(checkForPlayer.transform.position, boxSize);
         }
+    }
+
+    private void OnDestroy()
+    {
+        ballSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        dieSound = FMODUnity.RuntimeManager.CreateInstance("event:/Enemy/en_die");
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(dieSound, transform, GetComponent<Rigidbody2D>());
+        dieSound.start();
+        dieSound.release();
     }
 }
