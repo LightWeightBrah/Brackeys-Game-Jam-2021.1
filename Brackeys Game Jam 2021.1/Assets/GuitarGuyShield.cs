@@ -25,6 +25,8 @@ public class GuitarGuyShield : MonoBehaviour
 
     FMOD.Studio.PARAMETER_DESCRIPTION pd;
     FMOD.Studio.PARAMETER_ID pID;
+    FMOD.Studio.PARAMETER_DESCRIPTION pd2;
+    FMOD.Studio.PARAMETER_ID pID2;
 
 
 
@@ -35,6 +37,8 @@ public class GuitarGuyShield : MonoBehaviour
         gtrShieldSound = FMODUnity.RuntimeManager.CreateInstance("event:/Player/char_gtr_shield");
         FMODUnity.RuntimeManager.StudioSystem.getParameterDescriptionByName("GtrShieldEnd", out pd);
         pID = pd.id;
+        FMODUnity.RuntimeManager.StudioSystem.getParameterDescriptionByName("pauseMenu", out pd2);
+        pID2 = pd2.id;
     }
 
     void Update()
@@ -50,6 +54,7 @@ public class GuitarGuyShield : MonoBehaviour
                 hasPressedSpace = true;
                 shield.gameObject.SetActive(true);
                 gtrShieldSound.start();
+                FMODUnity.RuntimeManager.StudioSystem.setParameterByID(pID2, 0.9f);
                 //here add SFX turning on shield;
             }
 
@@ -63,7 +68,9 @@ public class GuitarGuyShield : MonoBehaviour
                 else
                 {
                     SetShieldTimers();
+                    FMODUnity.RuntimeManager.StudioSystem.setParameterByID(pID2, 0f);
                     FMODUnity.RuntimeManager.StudioSystem.setParameterByID(pID, 1f);
+                    
                 }
             }
         }
