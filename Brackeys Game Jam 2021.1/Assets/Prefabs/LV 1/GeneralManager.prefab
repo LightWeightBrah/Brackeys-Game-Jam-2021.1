@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4210792054046319241}
   - component: {fileID: 4210792054046319240}
+  - component: {fileID: 1443296038}
   m_Layer: 0
   m_Name: GeneralManager
   m_TagString: Untagged
@@ -49,3 +50,25 @@ MonoBehaviour:
   playerMovement: {fileID: 0}
   playerShooting: {fileID: 0}
   characterSwitch: {fileID: 0}
+--- !u!114 &1443296038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4210792054046319247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 242f314a9a06e0f43b0a463191291c98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeScreen: {fileID: 0}
+  fadeSpeed: 1
+  waitToLoad: 1
+  cutscenes:
+  - {fileID: 0}
+  areCutScenesEnabled: 1
+  GameOverScreen: {fileID: 0}
+  everythingInCutScene: {fileID: 0}
+  characterSwitch: {fileID: 0}
+  currentSceneName: LV 1

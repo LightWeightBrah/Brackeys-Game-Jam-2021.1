@@ -40,8 +40,10 @@ public class LeftRightEnemy : Enemy
         transform.position += transform.right * speed * Time.deltaTime;
 
         RaycastHit2D ground = Physics2D.Raycast(groundCheck.position, Vector2.down, 1f);
+        Debug.Log("enemy name is " + gameObject.name + " Ground collider is " + ground.collider);
         if(ground.collider == false)
         {
+            Debug.Log("Ground is false ");
             if(isMovingRight)
             {
                 transform.eulerAngles = new Vector3(transform.eulerAngles.x, -180, transform.eulerAngles.z);

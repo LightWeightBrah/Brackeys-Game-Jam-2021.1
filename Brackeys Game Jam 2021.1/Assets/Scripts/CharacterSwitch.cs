@@ -63,22 +63,38 @@ public class CharacterSwitch : MonoBehaviour
 
     void SelectPlayer()
     {
+        // Find the current player and the new player
+        Transform current = null;
+        Transform next = null;
         int i = 0;
         foreach (Transform player in transform)
         {
-            if (i == selectedPlayer)
-            {
-                player.gameObject.SetActive(true);
-                charStats = player.GetComponent<CharacterStats>();
-                SwitchStats();
-            }
-            else
-            {
-                player.gameObject.SetActive(false);
-            }
-
-            i++;
+            if (player.gameObject.activeSelf) current = player;
+            if (i++ == selectedPlayer) next = player;
         }
+        if (next == null) { Debug.Log("Next not found, expected: " + selectedPlayer); return; }
+        next.gameObject.SetActive(true);
+        if (current != null)
+        {
+            next.position = current.position;
+            next.rotation = current.rotation;
+            next.parent.GetComponent<Rigidbody2D>().velocity = current.parent.GetComponent<Rigidbody2D>().velocity;
+            current.gameObject.SetActive(false);
+        }
+
+        // Find what was the previous state
+        bool wasIdle = currentAnimationState == idleAnim;
+        bool wasRun = currentAnimationState == runAnim;
+        bool wasJump = currentAnimationState == jumpAnim;
+        bool wasShoot = currentAnimationState == shootAnim;
+
+        charStats = next.GetComponent<CharacterStats>();
+        SwitchStats();
+
+        if (wasIdle) ChangeAnimationState(idleAnim);
+        else if (wasRun) ChangeAnimationState(runAnim);
+        else if (wasJump) ChangeAnimationState(jumpAnim);
+        else if (wasShoot) ChangeAnimationState(shootAnim);
     }
 
     void SwitchStats()

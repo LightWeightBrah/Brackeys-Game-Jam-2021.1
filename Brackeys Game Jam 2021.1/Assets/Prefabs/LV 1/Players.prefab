@@ -389,6 +389,7 @@ MonoBehaviour:
   runAnim: BrushGuy_Run
   jumpAnim: BrushGuy_Jump
   shootAnim: BrushGuy_Shoot
+  sr: {fileID: 8744204869197096357}
   speed: 10
   jumpForce: 30
   extraJumps: 2
@@ -481,8 +482,9 @@ MonoBehaviour:
   animator: {fileID: 819469127}
   idleAnim: GuitarGuy_idle
   runAnim: GuitarGuy_running
-  jumpAnim: null
-  shootAnim: null
+  jumpAnim: GuitarGuy_idle
+  shootAnim: GuitarGuy_idle
+  sr: {fileID: 8744204868072256358}
   speed: 6
   jumpForce: 10
   extraJumps: 0
@@ -634,8 +636,9 @@ MonoBehaviour:
   animator: {fileID: 443494407}
   idleAnim: ComputerGuy_Idle
   runAnim: ComputerGuy_Running
-  jumpAnim: null
+  jumpAnim: ComputerGuy_Idle
   shootAnim: ComputerGuy_Shooting
+  sr: {fileID: 8744204868325277360}
   speed: 20
   jumpForce: 25
   extraJumps: 0
@@ -817,6 +820,7 @@ MonoBehaviour:
   allPlayerStats: {fileID: 8744204869360280611}
   animator: {fileID: 0}
   currentAnimationState: 
+  sr: {fileID: 0}
   idleAnim: 
   runAnim: 
   jumpAnim: 
@@ -877,7 +881,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBetweenTakingDamage: 0.5
   health: 3
+  hpText: {fileID: 0}
   isShielded: 0
+  charSwitch: {fileID: 8744204869360280638}
+  colorWhenHit: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &7101640160716967830
 MonoBehaviour:
   m_ObjectHideFlags: 0
