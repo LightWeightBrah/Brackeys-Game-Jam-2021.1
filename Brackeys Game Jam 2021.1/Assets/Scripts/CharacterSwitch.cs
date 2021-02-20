@@ -16,6 +16,8 @@ public class CharacterSwitch : MonoBehaviour
     public Animator animator;
     public string currentAnimationState;
 
+    public SpriteRenderer sr;
+
     public string idleAnim;
     public string runAnim;
     public string jumpAnim;
@@ -86,6 +88,8 @@ public class CharacterSwitch : MonoBehaviour
         runAnim = charStats.runAnim;
         jumpAnim = charStats.jumpAnim;
         shootAnim = charStats.shootAnim;
+
+        sr = charStats.sr;
 
         playerMovement.speed = charStats.speed;
         playerMovement.jumpForce = charStats.jumpForce;

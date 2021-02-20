@@ -10,6 +10,7 @@ public class CharacterStats : MonoBehaviour
     public string runAnim;
     public string jumpAnim;
     public string shootAnim;
+    public SpriteRenderer sr;
 
     [Header("Movement")]
     public float speed;
