@@ -10,6 +10,7 @@ public class MainMenu : MonoBehaviour
     FMOD.Studio.Bus busSFX;
     FMOD.Studio.Bus busMusic;
 
+    public float sfxVolume = 1f;
     
 
     private void Start()
@@ -28,6 +29,7 @@ public class MainMenu : MonoBehaviour
     public void SetSFXVolume(float volume)
     {
         busSFX.setVolume(volume);
+        sfxVolume = volume;
         Debug.Log("Setting SFX volume to " + volume);
         FMODUnity.RuntimeManager.PlayOneShot("event:/UI/sfx_volume", transform.position);
     }
