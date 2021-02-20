@@ -16,6 +16,8 @@ public class GeneralManager : MonoBehaviour
     [SerializeField] PlayerShooting playerShooting;
     [SerializeField] CharacterSwitch characterSwitch;
 
+    [SerializeField] GameObject settings;
+
     bool canUseEscape = true;
 
     FMOD.Studio.PARAMETER_DESCRIPTION pd;
@@ -51,6 +53,20 @@ public class GeneralManager : MonoBehaviour
             StartCoroutine(StartUNPause());
             FMODUnity.RuntimeManager.StudioSystem.setParameterByID(pID, 0f);
         }
+    }
+
+    public void GoToSettings()
+    {
+        canUseEscape = false;
+        settings.gameObject.SetActive(true);
+        pauseMenu.gameObject.SetActive(false);
+    }
+
+    public void GoFromSettings()
+    {
+        canUseEscape = true;
+        settings.gameObject.SetActive(false);
+        pauseMenu.gameObject.SetActive(true);
     }
 
     IEnumerator StartPause()
