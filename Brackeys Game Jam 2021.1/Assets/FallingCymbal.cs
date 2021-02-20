@@ -63,7 +63,7 @@ public class FallingCymbal : Enemy
     {
         if (hasLanded)
         {
-            //Here you need to add SFX
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Enemy/en_cymbal_crash", transform.position);
             animator.SetBool("isGrounded", true);
             return;
         }
