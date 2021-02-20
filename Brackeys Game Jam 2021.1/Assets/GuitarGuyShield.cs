@@ -16,13 +16,25 @@ public class GuitarGuyShield : MonoBehaviour
 
     bool hasPressedSpace;
 
+    private FMOD.Studio.EventInstance gtrShieldSound;
+    
+
     [HideInInspector]
     public bool canUseShield;
+
+
+    FMOD.Studio.PARAMETER_DESCRIPTION pd;
+    FMOD.Studio.PARAMETER_ID pID;
+
+
 
     void Start()
     {
         shield.gameObject.SetActive(false);
         durationCounter = durationOfShield;
+        gtrShieldSound = FMODUnity.RuntimeManager.CreateInstance("event:/Player/char_gtr_shield");
+        FMODUnity.RuntimeManager.StudioSystem.getParameterDescriptionByName("GtrShieldEnd", out pd);
+        pID = pd.id;
     }
 
     void Update()
@@ -37,6 +49,7 @@ public class GuitarGuyShield : MonoBehaviour
             {
                 hasPressedSpace = true;
                 shield.gameObject.SetActive(true);
+                gtrShieldSound.start();
                 //here add SFX turning on shield;
             }
 
@@ -50,6 +63,7 @@ public class GuitarGuyShield : MonoBehaviour
                 else
                 {
                     SetShieldTimers();
+                    FMODUnity.RuntimeManager.StudioSystem.setParameterByID(pID, 1f);
                 }
             }
         }
@@ -71,4 +85,5 @@ public class GuitarGuyShield : MonoBehaviour
         hasPressedSpace = false;
         allPlayerStats.isShielded = false;
     }
+
 }
