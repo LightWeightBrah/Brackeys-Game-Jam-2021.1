@@ -11,6 +11,8 @@ public class PlayerShooting : MonoBehaviour
     PlayerMovement playerMovement;
     public float shootingAnimationTime;
 
+    public bool cantShoot;
+
     private void Awake()
     {
         charSwitch = GetComponent<CharacterSwitch>();
@@ -25,6 +27,8 @@ public class PlayerShooting : MonoBehaviour
     void Update()
     {
         if (isPaused) return;
+
+        if (cantShoot) return;
 
         if (Input.GetKeyDown(KeyCode.Space))
         {

@@ -9,12 +9,16 @@ public class AllPlayerStats : MonoBehaviour, IDamageable
 
     public int health;
 
+    public bool isShielded;
+
     void Update()
     {
         takeDamageCounter -= Time.deltaTime;
     }
     public void TakeDamage(int damage)
     {
+        if (isShielded) return;
+
         if(takeDamageCounter > 0)
         {
             return;
