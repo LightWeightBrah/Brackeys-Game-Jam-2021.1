@@ -63,16 +63,19 @@ public class MenuManager : MonoBehaviour
 
     public void PlayGame()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/UI/ui_sel", transform.position);
         StartCoroutine(StartGame());
     }
 
     public void GoBackFrom(GameObject g)
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/UI/ui_sel", transform.position);
         StartCoroutine(UnloadUI(g));
     }
 
     public void GoTo(GameObject g)
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/UI/ui_sel", transform.position);
         StartCoroutine(LoadUI(g));
     }
 
