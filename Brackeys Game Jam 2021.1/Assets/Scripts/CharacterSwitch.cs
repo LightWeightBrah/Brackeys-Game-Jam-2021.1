@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class CharacterSwitch : MonoBehaviour
 {
-    [SerializeField] GameObject[] allPlayers;
-    [SerializeField] List<GameObject> availablePlayers = new List<GameObject>();
-
     int selectedPlayer;
 
     [SerializeField] PlayerMovement playerMovement;
     [SerializeField] PlayerShooting playerShooting;
+    [SerializeField] GuitarGuyShield guitarGuyShield;
     [SerializeField] GeneralManager generalManager;
+    [SerializeField] AllPlayerStats allPlayerStats;
     CharacterStats charStats;
 
     public Animator animator;
@@ -94,6 +93,11 @@ public class CharacterSwitch : MonoBehaviour
 
         playerShooting.firePoint = charStats.firePoint;
         playerShooting.projectile = charStats.projectile;
+        playerShooting.cantShoot = charStats.cantShoot;
+
+        guitarGuyShield.canUseShield = charStats.canUseShield;
+        guitarGuyShield.TurnOffShieldOnNewCharacter();
+        allPlayerStats.isShielded = false;
 
         generalManager.SwitchPlayerIcon(charStats.characterIcon);
     }

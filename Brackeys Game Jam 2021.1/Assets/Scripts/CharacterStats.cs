@@ -21,6 +21,10 @@ public class CharacterStats : MonoBehaviour
     public float timeBtwShots;
     public Transform firePoint;
     public GameObject projectile;
+    public bool cantShoot;
+
+    [Header("Shield")]
+    public bool canUseShield;
 
     [Header("UI")]
     public Sprite characterIcon;

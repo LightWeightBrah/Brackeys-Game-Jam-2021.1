@@ -2570,7 +2570,7 @@ Transform:
   - {fileID: 912832141}
   - {fileID: 1953629195}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &753839234
 GameObject:
@@ -2654,23 +2654,6 @@ Transform:
   m_Father: {fileID: 688892819}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &831358636 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8744204868412062728, guid: 97fa210b4b75d4440a40bf4acd2d1496, type: 3}
-  m_PrefabInstance: {fileID: 8744204869290979984}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &831358637
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 831358636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4095b1c3fa7874379b3545b7f96dd463, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &834061732
 GameObject:
   m_ObjectHideFlags: 0
@@ -2907,7 +2890,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &861077921
 MonoBehaviour:
@@ -3866,6 +3849,17 @@ Transform:
   m_Father: {fileID: 688892819}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1389299066 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 343522217002580501, guid: 0d5704f53edb2054c8a578dae15a16de, type: 3}
+  m_PrefabInstance: {fileID: 4477827665084674093}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1454281177
 GameObject:
   m_ObjectHideFlags: 0
@@ -4015,17 +4009,6 @@ Transform:
   m_Father: {fileID: 688892819}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1459035019 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4477827664169593766, guid: 0d5704f53edb2054c8a578dae15a16de, type: 3}
-  m_PrefabInstance: {fileID: 4477827665084674093}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1509341437
 GameObject:
   m_ObjectHideFlags: 0
@@ -5049,7 +5032,7 @@ PrefabInstance:
     - target: {fileID: 4210792054046319240, guid: 5bd8c71edd400854f9a0418e3906041b, type: 3}
       propertyPath: currentPlayerIcon
       value: 
-      objectReference: {fileID: 1459035019}
+      objectReference: {fileID: 1389299066}
     - target: {fileID: 4210792054046319240, guid: 5bd8c71edd400854f9a0418e3906041b, type: 3}
       propertyPath: pauseMenuAnimator
       value: 
@@ -5125,7 +5108,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4477827665115742101, guid: 0d5704f53edb2054c8a578dae15a16de, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4477827665115742101, guid: 0d5704f53edb2054c8a578dae15a16de, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5357,7 +5340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad63400280615a0409ee70cbbb356692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1000000
+  health: 1002735
   damage: 1
   rangeToAttackPlayer: 0
   whatIsGround:
@@ -5394,21 +5377,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8744204869197096357, guid: 97fa210b4b75d4440a40bf4acd2d1496, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8744204869197096357, guid: 97fa210b4b75d4440a40bf4acd2d1496, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8744204869197096357, guid: 97fa210b4b75d4440a40bf4acd2d1496, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8744204869360280608, guid: 97fa210b4b75d4440a40bf4acd2d1496, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8744204869360280608, guid: 97fa210b4b75d4440a40bf4acd2d1496, type: 3}
       propertyPath: m_LocalPosition.x
