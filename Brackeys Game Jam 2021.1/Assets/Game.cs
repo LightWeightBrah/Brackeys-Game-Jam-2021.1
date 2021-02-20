@@ -26,6 +26,8 @@ public class Game : MonoBehaviour
 
     [SerializeField] string currentSceneName;
 
+    [SerializeField] string nextSceneToLoad;
+
     void Start()
     {
         fadeOutBlack = true;
@@ -97,11 +99,7 @@ public class Game : MonoBehaviour
 
         yield return new WaitForSeconds(waitToLoad);
 
-        StartFadeOutBlack();
-
-        cutscenes[0].gameObject.SetActive(true);
-
-        areCutScenesEnabled = true;
+        SceneManager.LoadScene(nextSceneToLoad);
     }
 
    

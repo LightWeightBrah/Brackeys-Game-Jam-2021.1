@@ -19,6 +19,10 @@ public class LeftRightEnemy : Enemy
 
     [SerializeField] Vector2 boxSize;
 
+    [SerializeField] LayerMask whatIsGround;
+
+    [SerializeField] GameObject checkForWall;
+
     void Update()
     {
         if(!shouldUseBoxCollider)
@@ -39,11 +43,12 @@ public class LeftRightEnemy : Enemy
 
         transform.position += transform.right * speed * Time.deltaTime;
 
-        RaycastHit2D ground = Physics2D.Raycast(groundCheck.position, Vector2.down, 1f);
-        Debug.Log("enemy name is " + gameObject.name + " Ground collider is " + ground.collider);
-        if(ground.collider == false)
+        RaycastHit2D ground = Physics2D.Raycast(groundCheck.position, Vector2.down, 1f, whatIsGround);
+
+        RaycastHit2D isWall = Physics2D.Raycast(checkForWall.transform.position, Vector2.down, 1f, whatIsGround);
+
+        if(ground.collider == false || isWall)
         {
-            Debug.Log("Ground is false ");
             if(isMovingRight)
             {
                 transform.eulerAngles = new Vector3(transform.eulerAngles.x, -180, transform.eulerAngles.z);
