@@ -80,6 +80,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
+  deathParticle: {fileID: 6719395363820191412, guid: a65def38ca06dea40921b9f9ffb6f0a7, type: 3}
   damage: 1
   speed: 5
   isMovingRight: 1

@@ -80,6 +80,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
+  deathParticle: {fileID: 6719395363820191412, guid: a65def38ca06dea40921b9f9ffb6f0a7, type: 3}
   damage: 1
   checkForPlayer: {fileID: 2275386443497556188}
   boxSize: {x: 2.12, y: 1.07}
