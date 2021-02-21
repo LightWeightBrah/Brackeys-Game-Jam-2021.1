@@ -33,14 +33,27 @@ public class LeftRightEnemy : Enemy
         {
             if (Physics2D.OverlapCircle(checkForPlayer.transform.position, circleSize, whatIsPlayer))
             {
-                player.GetComponent<IDamageable>().TakeDamage(damage);
+                RaycastHit2D circle = Physics2D.Raycast(checkForPlayer.transform.position, boxSize, whatIsPlayer);
+
+                if (circle.collider.gameObject.name != "bodySR")
+                {
+                    player.GetComponent<IDamageable>().TakeDamage(damage);
+                }
+
             }
         }
         else
         {
             if (Physics2D.OverlapBox(checkForPlayer.transform.position, boxSize, whatIsPlayer))
             {
-                player.GetComponent<IDamageable>().TakeDamage(damage);
+                RaycastHit2D box = Physics2D.Raycast(checkForPlayer.transform.position, boxSize, whatIsPlayer);
+
+                if(box.collider.gameObject.name != "bodySR")
+                {
+                    player.GetComponent<IDamageable>().TakeDamage(damage);
+
+                }
+
             }
         }
 
