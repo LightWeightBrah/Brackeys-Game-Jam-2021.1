@@ -24,9 +24,9 @@ AnimationClip:
     - time: 0.33333334
       value: {fileID: 21300000, guid: 0f137d3e425ffce4c9ae29e36ca38b40, type: 3}
     - time: 0.6666667
-      value: {fileID: 21300000, guid: 0f137d3e425ffce4c9ae29e36ca38b40, type: 3}
+      value: {fileID: 21300000, guid: 5a8a4e1f41eee954a918641f5c97724e, type: 3}
     attribute: m_Sprite
-    path: BugBoss/SR
+    path: SR
     classID: 212
     script: {fileID: 0}
   m_SampleRate: 60
@@ -37,7 +37,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 3555976179
+      path: 1428827312
       attribute: 0
       script: {fileID: 0}
       typeID: 212
@@ -46,7 +46,7 @@ AnimationClip:
     pptrCurveMapping:
     - {fileID: 21300000, guid: 5a8a4e1f41eee954a918641f5c97724e, type: 3}
     - {fileID: 21300000, guid: 0f137d3e425ffce4c9ae29e36ca38b40, type: 3}
-    - {fileID: 21300000, guid: 0f137d3e425ffce4c9ae29e36ca38b40, type: 3}
+    - {fileID: 21300000, guid: 5a8a4e1f41eee954a918641f5c97724e, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -73,7 +73,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.33333334
-    functionName: 
+    functionName: Shoot
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

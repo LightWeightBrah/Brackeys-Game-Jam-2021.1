@@ -13,14 +13,14 @@ public class Enemy : MonoBehaviour, IDamageable
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    public void TakeDamage(int damage)
+    public virtual void TakeDamage(int damage)
     {
         health -= damage;
         if (health <= 0)
             Destroy();
     }
 
-    void Destroy()
+    public void Destroy()
     {
         Destroy(gameObject);
     }

@@ -20,6 +20,9 @@ TextureImporter:
   - first:
       213: -8521942538194152161
     second: boss_parts_bullets_healthbar_5
+  - first:
+      213: -4023791385076405902
+    second: boss_parts_bullets_healthbar_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -273,6 +276,27 @@ TextureImporter:
       bones: []
       spriteID: f1595a6a96afbb980800000000000000
       internalID: -8521942538194152161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_parts_bullets_healthbar_6
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 1059
+        width: 196
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2796e32ed0f9828c0800000000000000
+      internalID: -4023791385076405902
       vertices: []
       indices: 
       edges: []
