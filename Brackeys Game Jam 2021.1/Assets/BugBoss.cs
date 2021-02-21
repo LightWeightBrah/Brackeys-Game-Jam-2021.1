@@ -8,7 +8,7 @@ public class BugBoss : Enemy
     [SerializeField] Transform introMovingPoint;
     [SerializeField] float speedOnIntro;
 
-    enum Boss { Intro, Words, RollingCoins, FallingBugs, OutOfScreen, Hand };
+    enum Boss { Intro, Words, RollingCoins, FallingBugs, OutOfScreen, Hand, HandsOutOfScreen };
 
     Boss boss = Boss.Intro;
 
@@ -35,8 +35,16 @@ public class BugBoss : Enemy
     [SerializeField] float outOfScreenSpeed;
 
     [Header("The Hand")]
+    [SerializeField] float handsSpeed;
+    [SerializeField] Vector3 rightHandStartPos;
+    [SerializeField] Vector3 leftHandStartPos;
+    [SerializeField] GameObject rightHand;
     [SerializeField] Transform rightHandMovePoint;
+    [SerializeField] GameObject leftHand;
+    [SerializeField] Transform leftHandMovePoint;
 
+    [SerializeField] float theHandWaitTimeduration;
+    [SerializeField] float theHandWaitCounter;
     Animator animator;
 
     float counter;
@@ -45,7 +53,10 @@ public class BugBoss : Enemy
 
     protected override void Awake()
     {
+        rightHandStartPos = rightHand.transform.localPosition;
+        leftHandStartPos = leftHand.transform.localPosition;
         animator = GetComponentInParent<Animator>();
+        theHandWaitCounter = theHandWaitTimeduration;
     }
 
     private void Update()
@@ -115,19 +126,44 @@ public class BugBoss : Enemy
                 break;
 
             case Boss.OutOfScreen:
-                if (transform.position != outOfScreenPoint.position)
-                {
-                    transform.position = Vector2.MoveTowards(transform.position, outOfScreenPoint.position, outOfScreenSpeed * Time.deltaTime);
-                }
-                else
+
+                transform.position = Vector2.MoveTowards(transform.position, outOfScreenPoint.position, outOfScreenSpeed * Time.deltaTime);
+                if (transform.position == outOfScreenPoint.position)
                 {
                     isInvincible = true;
                     boss = Boss.Hand;
                 }
                 break;
             case Boss.Hand:
+                rightHand.transform.localPosition = Vector3.MoveTowards(rightHand.transform.position, rightHandMovePoint.transform.localPosition, handsSpeed * Time.deltaTime);
+                leftHand.transform.localPosition = Vector3.MoveTowards(leftHand.transform.position, leftHandMovePoint.transform.localPosition, handsSpeed * Time.deltaTime);
 
+                if (rightHand.transform.localPosition == rightHandMovePoint.localPosition && leftHand.transform.localPosition == leftHandMovePoint.localPosition)
+                {
+
+
+                    if(theHandWaitCounter > 0)
+                    {
+                        theHandWaitCounter -= Time.deltaTime;
+                    }
+                    else
+                    {
+                        theHandWaitCounter = theHandWaitTimeduration;
+                        boss = Boss.HandsOutOfScreen;
+                    }
+                }
                 break;
+            case Boss.HandsOutOfScreen:
+
+                rightHand.transform.position = Vector3.MoveTowards(rightHand.transform.position, rightHandStartPos, handsSpeed * Time.deltaTime);
+                leftHand.transform.position = Vector3.MoveTowards(leftHand.transform.position, leftHandStartPos, handsSpeed * Time.deltaTime);
+
+                if (rightHand.transform.position == rightHandStartPos && leftHand.transform.position == leftHandStartPos)
+                {
+                    boss = Boss.Intro;
+                }
+                break;
+
 
         }
     }
