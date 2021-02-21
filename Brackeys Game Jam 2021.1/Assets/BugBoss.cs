@@ -50,6 +50,8 @@ public class BugBoss : Enemy
     float counter;
 
     bool isInvincible;
+    FMOD.Studio.EventInstance shootWordSound;
+    FMOD.Studio.EventInstance shootCoinSound;
 
     protected override void Awake()
     {
@@ -182,10 +184,18 @@ public class BugBoss : Enemy
         if (isShootingWords)
         {
             Instantiate(wordPrefab, firePoint.position, Quaternion.identity);
+            shootWordSound = FMODUnity.RuntimeManager.CreateInstance("event:/Enemy/boss_words");
+            FMODUnity.RuntimeManager.AttachInstanceToGameObject(shootWordSound, transform, GetComponent<Rigidbody2D>());
+            shootWordSound.start();
+            shootWordSound.release();
         }
         else
         {
             Instantiate(rollingCoin, firePoint.position, Quaternion.identity);
+            shootCoinSound = FMODUnity.RuntimeManager.CreateInstance("event:/Enemy/boss_coins");
+            FMODUnity.RuntimeManager.AttachInstanceToGameObject(shootCoinSound, transform, GetComponent<Rigidbody2D>());
+            shootCoinSound.start();
+            shootCoinSound.release();
         }
     }
 }
