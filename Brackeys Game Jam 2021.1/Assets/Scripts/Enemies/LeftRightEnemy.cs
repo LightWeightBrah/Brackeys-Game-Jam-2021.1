@@ -29,7 +29,13 @@ public class LeftRightEnemy : Enemy
 
     void Update()
     {
-        if(!shouldUseBoxCollider)
+        if (Vector2.Distance(transform.position, player.transform.position) < 1f)
+        {
+            player.GetComponent<IDamageable>().TakeDamage(damage);
+        }
+
+
+        if (!shouldUseBoxCollider)
         {
             if (Physics2D.OverlapCircle(checkForPlayer.transform.position, circleSize, whatIsPlayer))
             {

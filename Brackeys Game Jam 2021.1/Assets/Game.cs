@@ -30,6 +30,8 @@ public class Game : MonoBehaviour
 
     public bool isAfterBoss;
 
+    public bool isBoss;
+
     void Start()
     {
         fadeOutBlack = true;
@@ -76,6 +78,11 @@ public class Game : MonoBehaviour
 
         if (counter + 1 == cutscenes.Length)
         {
+            if(isBoss)
+            {
+                FindObjectOfType<BugBoss>().canMove = true;
+            }
+
             if(!isAfterBoss)
             {
                 characterSwitch.UNSetIsPaused();

@@ -25,6 +25,7 @@ public class GeneralManager : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log(settings.name);
         FMODUnity.RuntimeManager.StudioSystem.getParameterDescriptionByName("pauseMenu", out pd);
         pID = pd.id;
     }

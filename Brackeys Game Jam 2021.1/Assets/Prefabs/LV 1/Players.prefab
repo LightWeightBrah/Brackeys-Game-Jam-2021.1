@@ -849,6 +849,7 @@ MonoBehaviour:
   groundCheckRadius: 0.5
   isPaused: 0
   rb: {fileID: 0}
+  particle: {fileID: 0}
   walkMode: 0
 --- !u!114 &8744204869360280609
 MonoBehaviour:
@@ -886,6 +887,7 @@ MonoBehaviour:
   charSwitch: {fileID: 8744204869360280638}
   colorWhenHit: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  deathScreen: {fileID: 0}
 --- !u!114 &7101640160716967830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -902,6 +904,7 @@ MonoBehaviour:
   howOftenHeCanUseShield: 1
   durationOfShield: 3
   allPlayerStats: {fileID: 8744204869360280611}
+  isGuitarGuyAvaiable: 0
   canUseShield: 0
 --- !u!50 &8744204869360280639
 Rigidbody2D:

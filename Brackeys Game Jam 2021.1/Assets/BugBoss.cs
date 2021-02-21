@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BugBoss : Enemy
 {
@@ -47,6 +48,8 @@ public class BugBoss : Enemy
     [SerializeField] float theHandWaitCounter;
     Animator animator;
 
+    public bool canMove;
+
     float counter;
 
     bool isInvincible;
@@ -64,6 +67,11 @@ public class BugBoss : Enemy
 
     private void Update()
     {
+        if (canMove == false)
+        {
+            return;
+        }
+
         switch (boss)
         {
             case Boss.Intro:
@@ -72,6 +80,7 @@ public class BugBoss : Enemy
 
                 if (transform.position == introMovingPoint.position)
                 {
+                    isInvincible = false;
                     boss = Boss.Words;
                     counter = durationOfWordsPhase;
                 }
@@ -206,5 +215,11 @@ public class BugBoss : Enemy
             shootCoinSound.start();
             shootCoinSound.release();
         }
+    }
+
+    public override void Destroy()
+    {
+        base.Destroy();
+        SceneManager.LoadScene("SceneAfterBoss");
     }
 }

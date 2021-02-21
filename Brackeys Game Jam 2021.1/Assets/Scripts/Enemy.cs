@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour, IDamageable
             Destroy();
     }
 
-    public void Destroy()
+    public virtual void Destroy()
     {
         Instantiate(deathParticle, transform.position, Quaternion.identity);
         Destroy(gameObject);

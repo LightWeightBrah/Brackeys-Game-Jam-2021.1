@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf5220f46d850d04e862e45631b23d80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 1
   deathParticle: {fileID: 6719395363820191412, guid: a65def38ca06dea40921b9f9ffb6f0a7, type: 3}
   damage: 1
   speed: 5

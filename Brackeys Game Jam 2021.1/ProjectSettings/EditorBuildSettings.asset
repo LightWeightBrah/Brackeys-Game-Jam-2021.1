@@ -18,6 +18,12 @@ EditorBuildSettings:
     path: Assets/Scenes/LV 2.unity
     guid: 8209903561e7e9b4291924890d3c9025
   - enabled: 1
+    path: Assets/Scenes/LV 3.unity
+    guid: 642431f822809f14f8ee2392191d1650
+  - enabled: 1
     path: Assets/Scenes/BugLord.unity
     guid: 31d43633ab8b3c744b9f5b511d5fe840
+  - enabled: 1
+    path: Assets/Scenes/SceneAfterBoss.unity
+    guid: 7ad03c1fca75a1745a3e1778b29b8806
   m_configObjects: {}
