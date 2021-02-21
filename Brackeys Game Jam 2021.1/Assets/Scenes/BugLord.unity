@@ -7014,7 +7014,7 @@ GameObject:
   - component: {fileID: 1496327485}
   - component: {fileID: 1496327487}
   - component: {fileID: 1496327486}
-  m_Layer: 12
+  m_Layer: 10
   m_Name: Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7648,7 +7648,7 @@ GameObject:
   - component: {fileID: 1823845225}
   - component: {fileID: 1823845227}
   - component: {fileID: 1823845226}
-  m_Layer: 12
+  m_Layer: 10
   m_Name: point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7936,7 +7936,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1884880298}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.015006542, y: -1.4255891, z: -10}
+  m_LocalPosition: {x: -3.2155986, y: -0.8117199, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 10863817}
