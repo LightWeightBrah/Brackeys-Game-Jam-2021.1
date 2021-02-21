@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 3497303197354489161}
   - component: {fileID: 3970525583308582063}
   m_Layer: 0
-  m_Name: C
+  m_Name: ComputerBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  lifeTime: 10
+  lifeTime: 15
   damage: 1
   rayDistance: 0
   whatIsSolid:
