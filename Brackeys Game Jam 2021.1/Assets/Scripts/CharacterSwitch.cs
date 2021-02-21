@@ -116,7 +116,10 @@ public class CharacterSwitch : MonoBehaviour
         playerShooting.cantShoot = charStats.cantShoot;
 
         guitarGuyShield.canUseShield = charStats.canUseShield;
-        guitarGuyShield.TurnOffShieldOnNewCharacter();
+        if(guitarGuyShield.isGuitarGuyAvaiable)
+        {
+            guitarGuyShield.TurnOffShieldOnNewCharacter();
+        }
         allPlayerStats.isShielded = false;
 
         generalManager.SwitchPlayerIcon(charStats.characterIcon);

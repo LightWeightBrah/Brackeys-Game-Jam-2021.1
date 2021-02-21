@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GuitarGuyShield : MonoBehaviour
 {
-    [SerializeField] GameObject shield;
+    [SerializeField] GameObject shield = null;
 
     [SerializeField] float howOftenHeCanUseShield;
     float shieldCounter;
@@ -17,6 +17,8 @@ public class GuitarGuyShield : MonoBehaviour
     bool hasPressedSpace;
 
     private FMOD.Studio.EventInstance gtrShieldSound;
+
+    public bool isGuitarGuyAvaiable;
     
 
     [HideInInspector]
@@ -32,7 +34,10 @@ public class GuitarGuyShield : MonoBehaviour
 
     void Start()
     {
-        shield.gameObject.SetActive(false);
+        if(isGuitarGuyAvaiable)
+        {
+            shield.gameObject.SetActive(false);
+        }
         durationCounter = durationOfShield;
         gtrShieldSound = FMODUnity.RuntimeManager.CreateInstance("event:/Player/char_gtr_shield");
         FMODUnity.RuntimeManager.StudioSystem.getParameterDescriptionByName("GtrShieldEnd", out pd);

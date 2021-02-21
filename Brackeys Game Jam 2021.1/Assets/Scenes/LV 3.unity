@@ -4740,7 +4740,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &537901864
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6651,6 +6651,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8744204869360280611, guid: 97fa210b4b75d4440a40bf4acd2d1496, type: 3}
+      propertyPath: hpText
+      value: 
+      objectReference: {fileID: 3302265035373322154}
+    - target: {fileID: 8744204869360280611, guid: 97fa210b4b75d4440a40bf4acd2d1496, type: 3}
+      propertyPath: deathScreen
+      value: 
+      objectReference: {fileID: 1584510281725246960}
     - target: {fileID: 8744204869360280636, guid: 97fa210b4b75d4440a40bf4acd2d1496, type: 3}
       propertyPath: m_Name
       value: Players
@@ -19666,7 +19674,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1307423995
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22303,13 +22311,33 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1443296038, guid: 5bd8c71edd400854f9a0418e3906041b, type: 3}
+      propertyPath: fadeScreen
+      value: 
+      objectReference: {fileID: 1307423996}
+    - target: {fileID: 1443296038, guid: 5bd8c71edd400854f9a0418e3906041b, type: 3}
+      propertyPath: GameOverScreen
+      value: 
+      objectReference: {fileID: 1584510281725246960}
+    - target: {fileID: 1443296038, guid: 5bd8c71edd400854f9a0418e3906041b, type: 3}
+      propertyPath: characterSwitch
+      value: 
+      objectReference: {fileID: 702154742}
+    - target: {fileID: 1443296038, guid: 5bd8c71edd400854f9a0418e3906041b, type: 3}
       propertyPath: nextSceneToLoad
       value: BugLord
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443296038, guid: 5bd8c71edd400854f9a0418e3906041b, type: 3}
+      propertyPath: currentSceneName
+      value: LV 3
       objectReference: {fileID: 0}
     - target: {fileID: 1443296038, guid: 5bd8c71edd400854f9a0418e3906041b, type: 3}
       propertyPath: cutscenes.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1443296038, guid: 5bd8c71edd400854f9a0418e3906041b, type: 3}
+      propertyPath: everythingInCutScene
+      value: 
+      objectReference: {fileID: 1661694951}
     - target: {fileID: 1443296038, guid: 5bd8c71edd400854f9a0418e3906041b, type: 3}
       propertyPath: cutscenes.Array.data[0]
       value: 
@@ -22318,6 +22346,10 @@ PrefabInstance:
       propertyPath: cutscenes.Array.data[1]
       value: 
       objectReference: {fileID: 882376055}
+    - target: {fileID: 4210792054046319240, guid: 5bd8c71edd400854f9a0418e3906041b, type: 3}
+      propertyPath: settings
+      value: 
+      objectReference: {fileID: 9021956068165208478}
     - target: {fileID: 4210792054046319240, guid: 5bd8c71edd400854f9a0418e3906041b, type: 3}
       propertyPath: pauseMenu
       value: 
@@ -27746,7 +27778,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!222 &4477827663377355236
 CanvasRenderer:
   m_ObjectHideFlags: 0

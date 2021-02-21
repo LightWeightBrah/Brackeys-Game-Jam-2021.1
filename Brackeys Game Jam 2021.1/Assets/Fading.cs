@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Fading : MonoBehaviour
@@ -11,7 +12,12 @@ public class Fading : MonoBehaviour
 
     public float waitToLoad;
 
+    public string sceneToLoadName;
 
+    private void Start()
+    {
+        StartFadeOutBlack();
+    }
     public void StartFadeToBlack()
     {
         fadeToBlack = true;
@@ -43,5 +49,21 @@ public class Fading : MonoBehaviour
                 fadeToBlack = false;
             }
         }
+
+       
+    }
+
+    public void EnterTheGame()
+    {
+        StartCoroutine(StartGame());
+    }
+
+    IEnumerator StartGame()
+    {
+        StartFadeToBlack();
+
+        yield return new WaitForSeconds(waitToLoad);
+
+        SceneManager.LoadSceneAsync(sceneToLoadName);
     }
 }
