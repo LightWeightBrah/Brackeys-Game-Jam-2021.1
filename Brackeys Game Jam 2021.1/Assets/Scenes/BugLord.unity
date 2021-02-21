@@ -7331,7 +7331,11 @@ PrefabInstance:
       objectReference: {fileID: 941192157}
     - target: {fileID: 1443296038, guid: 5bd8c71edd400854f9a0418e3906041b, type: 3}
       propertyPath: nextSceneToLoad
-      value: LV 2
+      value: SceneAfterBoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443296038, guid: 5bd8c71edd400854f9a0418e3906041b, type: 3}
+      propertyPath: currentSceneName
+      value: BugLord
       objectReference: {fileID: 0}
     - target: {fileID: 1443296038, guid: 5bd8c71edd400854f9a0418e3906041b, type: 3}
       propertyPath: everythingInCutScene
@@ -7936,7 +7940,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1884880298}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.2156367, y: -0.81544304, z: -10}
+  m_LocalPosition: {x: -3.2155986, y: -0.8117199, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 10863817}

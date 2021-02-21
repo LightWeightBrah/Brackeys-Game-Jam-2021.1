@@ -5,23 +5,30 @@ using UnityEngine;
 public class TheHand : MonoBehaviour
 {
     [SerializeField] GameObject deathScreen;
-    static int counter = 0;
+    public static int counter = 0;
+
+    public static bool canDie;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Player")
+        if (collision.tag == "Player")
         {
             counter++;
             if (counter >= 2)
             {
-                deathScreen.SetActive(true);
+                if (canDie)
+                {
+                    deathScreen.SetActive(true);
+
+                }
             }
+
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.tag == "Player")
+        if (collision.tag == "Player")
         {
             counter--;
         }

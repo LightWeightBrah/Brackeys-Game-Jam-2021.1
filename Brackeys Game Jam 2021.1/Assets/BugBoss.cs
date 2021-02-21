@@ -147,6 +147,7 @@ public class BugBoss : Enemy
                     if(theHandWaitCounter > 0)
                     {
                         theHandWaitCounter -= Time.deltaTime;
+                        TheHand.canDie = true;
                     }
                     else
                     {
@@ -156,6 +157,9 @@ public class BugBoss : Enemy
                 }
                 break;
             case Boss.HandsOutOfScreen:
+                TheHand.counter = 0;
+
+                TheHand.canDie = false;
 
                 rightHand.transform.position = Vector3.MoveTowards(rightHand.transform.position, rightHandStartPos, handsSpeed * Time.deltaTime);
                 leftHand.transform.position = Vector3.MoveTowards(leftHand.transform.position, leftHandStartPos, handsSpeed * Time.deltaTime);
