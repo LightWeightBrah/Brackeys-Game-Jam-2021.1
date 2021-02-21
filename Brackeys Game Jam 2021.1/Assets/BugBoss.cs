@@ -52,6 +52,7 @@ public class BugBoss : Enemy
     bool isInvincible;
     FMOD.Studio.EventInstance shootWordSound;
     FMOD.Studio.EventInstance shootCoinSound;
+    FMOD.Studio.EventInstance bossDamageSound;
 
     protected override void Awake()
     {
@@ -178,6 +179,10 @@ public class BugBoss : Enemy
     {
         if (isInvincible) return;
 
+        bossDamageSound = FMODUnity.RuntimeManager.CreateInstance("event:/Enemy/en_die");
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(bossDamageSound, transform, GetComponent<Rigidbody2D>());
+        bossDamageSound.start();
+        bossDamageSound.release();
         health -= damage;
         if (health <= 0)
             Destroy();
