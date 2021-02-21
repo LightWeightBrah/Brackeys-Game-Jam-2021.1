@@ -19,10 +19,18 @@ public class AllPlayerStats : MonoBehaviour, IDamageable
 
     [SerializeField] GameObject deathScreen;
     bool dieSoundPlayed = false;
+    FMOD.Studio.Bus busSFX;
+    FMOD.Studio.PARAMETER_DESCRIPTION pd2;
+    FMOD.Studio.PARAMETER_ID pID2;
 
     void Start()
     {
         hpText.text = health.ToString();
+        busSFX = FMODUnity.RuntimeManager.GetBus("bus:/Master/SFX");
+        busSFX.setVolume(1f);
+        FMODUnity.RuntimeManager.StudioSystem.getParameterDescriptionByName("pauseMenu", out pd2);
+        pID2 = pd2.id;
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByID(pID2, 0f);
     }
 
     void Update()
@@ -47,7 +55,11 @@ public class AllPlayerStats : MonoBehaviour, IDamageable
         else
         {
             Debug.Log("Player takes damage");
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Player/char_damage", transform.position);
+            if (health > 0)
+            {
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Player/char_damage", transform.position);
+            }
+            
 
             charSwitch.sr.color = colorWhenHit;
             health -= damage;
@@ -75,7 +87,14 @@ public class AllPlayerStats : MonoBehaviour, IDamageable
         }
         
         deathScreen.gameObject.SetActive(true);
+        Invoke("LowerSfx", 1f);
         charSwitch.SetIsPaused();
         Debug.Log("Player has died");
+    }
+
+    public void LowerSfx()
+    {
+        busSFX.setVolume(0f);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByID(pID2, 1f);
     }
 }

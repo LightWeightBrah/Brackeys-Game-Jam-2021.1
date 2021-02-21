@@ -25,6 +25,8 @@ public class FallingBug : Enemy
     [SerializeField] Vector2 boxSize;
     [SerializeField] LayerMask whatIsPlayer;
 
+    FMOD.Studio.EventInstance fallingSound;
+
     Vector2 position;
 
     private void Start()
@@ -32,6 +34,10 @@ public class FallingBug : Enemy
         position = transform.position;
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        fallingSound = FMODUnity.RuntimeManager.CreateInstance("event:/Enemy/en_cymbal_fall");
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(fallingSound, transform, GetComponent<Rigidbody2D>());
+        fallingSound.start();
+        fallingSound.release();
     }
 
     private void Update()
