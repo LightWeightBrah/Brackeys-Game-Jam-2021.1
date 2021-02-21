@@ -63,6 +63,7 @@ Transform:
   - {fileID: 2634871558799701231}
   - {fileID: 6918330992557678575}
   - {fileID: 7610515609019359261}
+  - {fileID: 7452266620120895051}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -81,6 +82,7 @@ MonoBehaviour:
   health: 3
   damage: 1
   speed: 5
+  isMovingRight: 1
   groundCheck: {fileID: 6918330992557678575}
   checkForPlayer: {fileID: 211990499716786260}
   circleSize: 0.97
@@ -89,6 +91,10 @@ MonoBehaviour:
     m_Bits: 256
   shouldUseBoxCollider: 1
   boxSize: {x: 0.79, y: 1.9}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 64
+  checkForWall: {fileID: 3603506845965092247}
 --- !u!50 &2634871558617897066
 Rigidbody2D:
   serializedVersion: 4
@@ -238,6 +244,36 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8082681, y: 1.874737}
   m_EdgeRadius: 0
+--- !u!1 &3603506845965092247
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7452266620120895051}
+  m_Layer: 7
+  m_Name: CheckForWall
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7452266620120895051
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3603506845965092247}
+  m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.824, y: 0.211, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2634871558617897067}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3972425631035900911
 GameObject:
   m_ObjectHideFlags: 0
