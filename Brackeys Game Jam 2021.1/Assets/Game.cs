@@ -32,8 +32,11 @@ public class Game : MonoBehaviour
 
     public bool isBoss;
 
+    float counterAfterBossScene;
+
     void Start()
     {
+        counterAfterBossScene = 1.5f;
         fadeOutBlack = true;
     }
 
@@ -57,9 +60,21 @@ public class Game : MonoBehaviour
             }
         }
 
+        counterAfterBossScene -= Time.deltaTime;
+
         if (areCutScenesEnabled && Input.anyKeyDown)
         {
-            StartCoroutine(ShowNextCutscene());
+            if(!isAfterBoss)
+            {
+                StartCoroutine(ShowNextCutscene());
+            }
+            else
+            {
+                if(counterAfterBossScene < 0)
+                {
+                    StartCoroutine(ShowNextCutscene());
+                }
+            }
         }
     }
 

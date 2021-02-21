@@ -2105,14 +2105,14 @@ MonoBehaviour:
   howOftenBugShouldAppear: 0.5
   outOfScreenPoint: {fileID: 1549232222}
   outOfScreenSpeed: 30
-  handsSpeed: 3
+  handsSpeed: 6
   rightHandStartPos: {x: 0, y: 0, z: 0}
   leftHandStartPos: {x: 0, y: 0, z: 0}
   rightHand: {fileID: 823471190}
   rightHandMovePoint: {fileID: 1748865425}
   leftHand: {fileID: 978430489}
   leftHandMovePoint: {fileID: 107522127}
-  theHandWaitTimeduration: 5
+  theHandWaitTimeduration: 2
   theHandWaitCounter: 0
   canMove: 0
 --- !u!95 &499641601

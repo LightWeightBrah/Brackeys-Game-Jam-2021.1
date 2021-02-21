@@ -33,6 +33,7 @@ public class ComputerBullet : MonoBehaviour
             if (hitInfo.collider.CompareTag("Enemy"))
             {
                 hitInfo.collider.GetComponentInParent<IDamageable>().TakeDamage(damage);
+                DestroyProjectile();
             }
         }
 
