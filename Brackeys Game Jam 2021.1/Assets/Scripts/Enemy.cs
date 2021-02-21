@@ -8,6 +8,8 @@ public class Enemy : MonoBehaviour, IDamageable
 
     public int health;
 
+    public GameObject deathParticle;
+
     protected virtual void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -22,6 +24,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
     public void Destroy()
     {
+        Instantiate(deathParticle, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }

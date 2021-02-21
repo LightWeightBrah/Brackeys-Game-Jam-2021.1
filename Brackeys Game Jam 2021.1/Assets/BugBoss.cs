@@ -145,7 +145,7 @@ public class BugBoss : Enemy
                 {
 
 
-                    if(theHandWaitCounter > 0)
+                    if (theHandWaitCounter > 0)
                     {
                         theHandWaitCounter -= Time.deltaTime;
                         TheHand.canDie = true;
