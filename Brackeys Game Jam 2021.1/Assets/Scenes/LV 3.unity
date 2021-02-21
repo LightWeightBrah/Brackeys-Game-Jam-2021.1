@@ -6607,6 +6607,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7101640160716967830, guid: 97fa210b4b75d4440a40bf4acd2d1496, type: 3}
+      propertyPath: isGuitarGuyAvaiable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8539507719676758211, guid: 97fa210b4b75d4440a40bf4acd2d1496, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8744204868424672837, guid: 97fa210b4b75d4440a40bf4acd2d1496, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8744204869360280608, guid: 97fa210b4b75d4440a40bf4acd2d1496, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -22369,7 +22381,7 @@ PrefabInstance:
     - target: {fileID: 4210792054046319240, guid: 5bd8c71edd400854f9a0418e3906041b, type: 3}
       propertyPath: currentPlayerIcon
       value: 
-      objectReference: {fileID: 4477827664501467813}
+      objectReference: {fileID: 343522215592770326}
     - target: {fileID: 4210792054046319240, guid: 5bd8c71edd400854f9a0418e3906041b, type: 3}
       propertyPath: pauseMenuAnimator
       value: 

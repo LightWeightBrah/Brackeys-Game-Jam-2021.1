@@ -275,6 +275,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7101640160716967830, guid: 97fa210b4b75d4440a40bf4acd2d1496, type: 3}
+      propertyPath: isGuitarGuyAvaiable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8744204869360280608, guid: 97fa210b4b75d4440a40bf4acd2d1496, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -2080,6 +2084,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 500
+  deathParticle: {fileID: 0}
   introMovingPoint: {fileID: 1111124399}
   speedOnIntro: 6
   firePoint: {fileID: 949039820}
@@ -9295,7 +9300,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1884880298}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.2155986, y: -0.8117199, z: -10}
+  m_LocalPosition: {x: -4.004143, y: -1.1762681, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 10863817}
