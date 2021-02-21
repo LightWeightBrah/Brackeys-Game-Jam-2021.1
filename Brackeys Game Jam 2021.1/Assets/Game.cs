@@ -28,6 +28,8 @@ public class Game : MonoBehaviour
 
     [SerializeField] string nextSceneToLoad;
 
+    public bool isAfterBoss;
+
     void Start()
     {
         fadeOutBlack = true;
@@ -61,7 +63,10 @@ public class Game : MonoBehaviour
 
     public IEnumerator ShowNextCutscene()
     {
-        characterSwitch.SetIsPaused();
+        if(!isAfterBoss)
+        {
+            characterSwitch.SetIsPaused();
+        }
 
         StartFadeToBlack();
 
@@ -71,7 +76,14 @@ public class Game : MonoBehaviour
 
         if (counter + 1 == cutscenes.Length)
         {
-            characterSwitch.UNSetIsPaused();
+            if(!isAfterBoss)
+            {
+                characterSwitch.UNSetIsPaused();
+            }
+            else
+            {
+                SceneManager.LoadScene("MainMenu");
+            }
             everythingInCutScene.gameObject.SetActive(false);
             areCutScenesEnabled = false;
         }
