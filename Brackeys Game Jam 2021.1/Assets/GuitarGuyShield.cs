@@ -74,7 +74,8 @@ public class GuitarGuyShield : MonoBehaviour
                 {
                     SetShieldTimers();
                     FMODUnity.RuntimeManager.StudioSystem.setParameterByID(pID2, 0f);
-                    FMODUnity.RuntimeManager.StudioSystem.setParameterByID(pID, 1f);
+                    gtrShieldSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                        //FMODUnity.RuntimeManager.StudioSystem.setParameterByID(pID, 1f);
                     
                 }
             }
@@ -92,11 +93,13 @@ public class GuitarGuyShield : MonoBehaviour
 
     public void TurnOffShieldOnNewCharacter()
     {
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByID(pID2, 0f);
+        gtrShieldSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         shield.gameObject.SetActive(false);
         durationCounter = durationOfShield;
         hasPressedSpace = false;
         allPlayerStats.isShielded = false;
-        FMODUnity.RuntimeManager.StudioSystem.setParameterByID(pID2, 0f);
+        
     }
 
 }

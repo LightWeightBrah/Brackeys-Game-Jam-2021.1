@@ -61,6 +61,7 @@ public class GeneralManager : MonoBehaviour
         canUseEscape = false;
         settings.gameObject.SetActive(true);
         pauseMenu.gameObject.SetActive(false);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByID(pID, 0f);
     }
 
     public void GoFromSettings()
@@ -68,6 +69,7 @@ public class GeneralManager : MonoBehaviour
         canUseEscape = true;
         settings.gameObject.SetActive(false);
         pauseMenu.gameObject.SetActive(true);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByID(pID, 1f);
     }
 
     IEnumerator StartPause()

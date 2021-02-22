@@ -34,10 +34,15 @@ public class Game : MonoBehaviour
 
     float counterAfterBossScene;
 
+    FMOD.Studio.PARAMETER_DESCRIPTION pd;
+    FMOD.Studio.PARAMETER_ID pID;
+
     void Start()
     {
         counterAfterBossScene = 1.5f;
         fadeOutBlack = true;
+        FMODUnity.RuntimeManager.StudioSystem.getParameterDescriptionByName("pauseMenu", out pd);
+        pID = pd.id;
     }
 
     void Update()
@@ -152,6 +157,7 @@ public class Game : MonoBehaviour
     public void GoToMenu()
     {
         StartCoroutine(StartGoToMenu());
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByID(pID, 0f);
     }
 
     public void Restart()
