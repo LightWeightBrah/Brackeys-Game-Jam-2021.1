@@ -124,6 +124,7 @@ public class Game : MonoBehaviour
 
     public void GameOver()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Player/char_die", transform.position);
         GameOverScreen.gameObject.SetActive(true);
     }
 
