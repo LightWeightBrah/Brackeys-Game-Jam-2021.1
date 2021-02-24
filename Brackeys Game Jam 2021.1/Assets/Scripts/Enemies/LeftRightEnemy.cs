@@ -29,9 +29,10 @@ public class LeftRightEnemy : Enemy
 
     void Update()
     {
-        if (Vector2.Distance(transform.position, player.transform.position) < 1f)
+        if (Vector2.Distance(transform.position, player.transform.position) < 2f)
         {
             player.GetComponent<IDamageable>().TakeDamage(damage);
+            Debug.Log("Bicko");
         }
 
 
@@ -41,9 +42,10 @@ public class LeftRightEnemy : Enemy
             {
                 RaycastHit2D circle = Physics2D.Raycast(checkForPlayer.transform.position, boxSize, whatIsPlayer);
 
-                if (circle.collider.gameObject.name != "bodySR")
+                if (circle.collider.gameObject.tag == "Player")
                 {
                     player.GetComponent<IDamageable>().TakeDamage(damage);
+                    Debug.Log("Bicko2");
                 }
 
             }
@@ -54,8 +56,9 @@ public class LeftRightEnemy : Enemy
             {
                 RaycastHit2D box = Physics2D.Raycast(checkForPlayer.transform.position, boxSize, whatIsPlayer);
 
-                if(box.collider.gameObject.name != "bodySR")
+                if (box.collider.gameObject.tag == "Player")
                 {
+                    Debug.Log("Bicko2");
                     player.GetComponent<IDamageable>().TakeDamage(damage);
 
                 }
